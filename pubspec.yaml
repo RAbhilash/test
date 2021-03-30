@@ -35,7 +35,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  webview_flutter: 2.0.2
   url_launcher: 6.0.3
 
 # For information on the generic Dart part of this file, see the

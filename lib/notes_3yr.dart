@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'webdisplay.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 class detail {
   String subject, asset, subtext;
@@ -21,7 +19,7 @@ class yearthree extends StatelessWidget {
   List<detail> data1 = [], data2 = [];
   yearthree() {
     data1.add(detail("Physics", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
     data1.add(detail("Electrical", "assets/images/thumbnail.jpg",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail("English", "assets/images/thumbnail.jpg",
@@ -75,12 +73,7 @@ Widget item(BuildContext context, int index, String subject, String subtext,
     String asset) {
   return GestureDetector(
     onTap: () {
-      if (kIsWeb) {
-        launchurl(subtext);
-      } else {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => webview(url: subtext)));
-      }
+      launchurl(subtext);
     },
     child: Padding(
       padding: const EdgeInsets.all(16.0),
