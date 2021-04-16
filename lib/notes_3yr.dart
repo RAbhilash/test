@@ -18,8 +18,8 @@ class yearthree extends StatelessWidget {
   @override
   List<detail> data1 = [], data2 = [];
   yearthree() {
-    data1.add(detail("Physics", "assets/images/thumbnail.jpg",
-        "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
+    data1.add(detail("Theory of Computation", "assets/images/automata.png",
+        "https://drive.google.com/drive/folders/10n7qFW0SYVZng8ww-f2Rb-kFnA62QzU0?usp=sharing"));
     data1.add(detail("Electrical", "assets/images/thumbnail.jpg",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail("English", "assets/images/thumbnail.jpg",
@@ -121,6 +121,7 @@ Widget tab(String s, String subtext) {
       Padding(
         padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
         child: Container(
+          width: 100,
           child: Text(
             s,
             softWrap: true,
