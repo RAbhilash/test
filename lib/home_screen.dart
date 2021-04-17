@@ -9,6 +9,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  get icon => null;
+
   @override
   Widget build(BuildContext context) {
     // to get size
@@ -25,17 +27,49 @@ class _HomeScreenState extends State<HomeScreen> {
         fit: StackFit.loose,
         children: <Widget>[
           Container(
-            height: size.height * .3,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  alignment: Alignment.topCenter,
-                  image: AssetImage('assets/images/top_header.png')),
-            ),
+              // height: size.height * .3,
+              decoration:
+                  BoxDecoration(color: Color.fromRGBO(220, 220, 220, 150))),
+          Stack(
+            children: [
+              Column(
+                children: [
+                  SizedBox(height: 70),
+                  Container(
+                    height: size.height * .4,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(50))
+                        // bottomLeft: Radius.circular(50),
+                        // bottomRight: ),
+
+                        // image: DecorationImage(
+                        //     fit: BoxFit.fill,
+                        //     image: AssetImage("assets/images/background.png"))
+                        ),
+                  )
+                ],
+              ),
+              Column(children: [
+                SizedBox(height: size.height * .099),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 2),
+                  child: Container(
+                    height: 250,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.fitWidth,
+                          image: AssetImage("assets/images/tele.png")),
+                    ),
+                  ),
+                )
+              ])
+            ],
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(
+                  10.0), //to do spacing of this safe space and outer boundary
               child: Column(
                 children: <Widget>[
                   Container(
@@ -46,8 +80,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         CircleAvatar(
                           radius: 32,
-                          // backgroundImage: NetworkImage(
-                          //     'https://i.pinimg.com/originals/78/07/03/78070395106fcd1c3e66e3b3810568bb.jpg'),
+                          backgroundImage: NetworkImage(
+                              'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
                         ),
                         SizedBox(
                           width: 16,
@@ -57,14 +91,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'dummyuser',
+                              'SRM_PRO_MAX',
                               style: TextStyle(
                                   fontFamily: "Montserrat Medium",
-                                  color: Colors.white,
+                                  color: Colors.pinkAccent,
                                   fontSize: 20),
                             ),
                             Text(
-                              '4101410141',
+                              '.',
                               style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.redAccent,
@@ -75,38 +109,45 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 220,
+                  ),
                   Expanded(
                     child: GridView.count(
                       padding: EdgeInsets.all(20),
-                      mainAxisSpacing: 20,
-                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 40,
+                      crossAxisSpacing: 40,
                       primary: false,
                       crossAxisCount: 2,
                       children: <Widget>[
                         //this is personal data
                         //card 1: personal
-                        Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          elevation: 10,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/images/personal.png',
-                                height: 100,
+                        Container(
+                            decoration:
+                                BoxDecoration(color: Colors.transparent),
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              elevation: 10,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image.asset(
+                                    'assets/images/personal.png',
+                                    height: 100,
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'Personal Detail',
+                                    style: cardTextStyle,
+                                  )
+                                ],
                               ),
-                              Text(
-                                'Personal Data',
-                                style: cardTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
+                            )),
                         Card(
                           //card 2:Books
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
+                              borderRadius: BorderRadius.circular(20)),
                           elevation: 10,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -131,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                           child: Card(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)),
+                                borderRadius: BorderRadius.circular(20)),
                             elevation: 10,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -186,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Card(
                             //card 4:course notes
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)),
+                                borderRadius: BorderRadius.circular(20)),
                             elevation: 10,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,

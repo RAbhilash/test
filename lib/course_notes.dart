@@ -37,43 +37,49 @@ class notes extends StatelessWidget {
                       data: ThemeData(splashColor: Colors.blue),
                       child: InkWell(
                         highlightColor: Colors.transparent,
+                        customBorder: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => yearone()));
                         },
-                        child: Container(
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom: BorderSide(
-                                      width: 2, color: Colors.blue))),
-                          child: Card(
-                            color: Colors.transparent,
-                            elevation: 0,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Expanded(
-                                  flex: 5,
-                                  child: Image(
-                                      image: AssetImage(
-                                          'assets/images/yearone.png')),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Center(
-                                    child: Text(
-                                      'FIRST YEAR',
-                                      style: TextStyle(
-                                        fontFamily: "Montserrat Regular",
+                        child: ClipPath(
+                          clipper: ShapeBorderClipper(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)))),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(220, 220, 220, 200),
+                                border: Border(
+                                    bottom: BorderSide(
+                                        width: 7, color: Colors.blue))),
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: Image(
+                                        image: AssetImage(
+                                            'assets/images/yearone.png')),
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Center(
+                                      child: Text(
+                                        'FIRST YEAR',
+                                        style: TextStyle(
+                                          fontFamily: "Montserrat Regular",
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -83,43 +89,49 @@ class notes extends StatelessWidget {
                       data: ThemeData(splashColor: Colors.orange),
                       child: InkWell(
                         highlightColor: Colors.transparent,
+                        customBorder: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => yeartwo()));
                         },
-                        child: Container(
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom: BorderSide(
-                                      width: 2, color: Colors.orange))),
-                          child: Card(
-                            elevation: 0,
-                            color: Colors.transparent,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Expanded(
-                                  flex: 5,
-                                  child: Image(
-                                    image:
-                                        AssetImage('assets/images/yeartwo.png'),
+                        child: ClipPath(
+                          clipper: ShapeBorderClipper(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)))),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(220, 220, 220, 200),
+                                border: Border(
+                                    bottom: BorderSide(
+                                        width: 7, color: Colors.orange))),
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: Image(
+                                        image: AssetImage(
+                                            'assets/images/yeartwo.png')),
                                   ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Center(
-                                    child: Text(
-                                      'SECOND YEAR',
-                                      style: TextStyle(
-                                          fontFamily: "Montserrat Regular"),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Center(
+                                      child: Text(
+                                        'SECOND YEAR',
+                                        style: TextStyle(
+                                          fontFamily: "Montserrat Regular",
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -129,40 +141,49 @@ class notes extends StatelessWidget {
                       data: ThemeData(splashColor: Colors.purple),
                       child: InkWell(
                         highlightColor: Colors.transparent,
+                        customBorder: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => yearthree()));
                         },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom: BorderSide(
-                                      width: 2, color: Colors.purple))),
-                          child: Card(
-                            elevation: 0,
-                            color: Colors.transparent,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Expanded(
-                                  flex: 5,
-                                  child: Image(
-                                      image: AssetImage(
-                                          'assets/images/yearthree.png')),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Center(
-                                    child: Text(
-                                      'THIRD YEAR',
-                                      style: TextStyle(
-                                          fontFamily: "Montserrat Regular"),
+                        child: ClipPath(
+                          clipper: ShapeBorderClipper(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)))),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(220, 220, 220, 200),
+                                border: Border(
+                                    bottom: BorderSide(
+                                        width: 7, color: Colors.purple))),
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: Image(
+                                        image: AssetImage(
+                                            'assets/images/yearthree.png')),
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Center(
+                                      child: Text(
+                                        'THIRD YEAR',
+                                        style: TextStyle(
+                                          fontFamily: "Montserrat Regular",
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -172,39 +193,49 @@ class notes extends StatelessWidget {
                       data: ThemeData(splashColor: Colors.red),
                       child: InkWell(
                         highlightColor: Colors.transparent,
+                        customBorder: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => yearfour()));
                         },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom:
-                                      BorderSide(width: 2, color: Colors.red))),
-                          child: Card(
-                            color: Colors.transparent,
-                            elevation: 0,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Expanded(
+                        child: ClipPath(
+                          clipper: ShapeBorderClipper(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)))),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(220, 220, 220, 200),
+                                border: Border(
+                                    bottom: BorderSide(
+                                        width: 7, color: Colors.red))),
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
                                     flex: 5,
                                     child: Image(
                                         image: AssetImage(
-                                            'assets/images/yearfour.png'))),
-                                Expanded(
-                                  flex: 1,
-                                  child: Center(
-                                    child: Text(
-                                      'FOURTH YEAR',
-                                      style: TextStyle(
-                                          fontFamily: "Montserrat Regular"),
+                                            'assets/images/yearfour.png')),
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: Center(
+                                      child: Text(
+                                        'FOURTH YEAR',
+                                        style: TextStyle(
+                                          fontFamily: "Montserrat Regular",
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
