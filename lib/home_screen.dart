@@ -12,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  get icon => null;
+
   @override
   Widget build(BuildContext context) {
     // to get size
@@ -147,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           //card 1: personal
                           Card(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)),
+                                borderRadius: BorderRadius.circular(20)),
                             elevation: 10,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
