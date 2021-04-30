@@ -4,7 +4,7 @@ import 'package:app/books.dart';
 import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:app/placment.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -23,12 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
     var cardTextStyle = TextStyle(
         fontFamily: "Montserrat Regular",
         fontSize: 14,
-        color: Color.fromRGBO(63, 63, 63, 1));
+        color: Color.fromRGBO(63, 63, 63, 1)); //this is not really working
 
     return Scaffold(
       body: Container(
-        color:Colors.red[300],
-              child: Stack(
+        color: Colors.red[300],
+        child: Stack(
           fit: StackFit.loose,
           children: <Widget>[
             Stack(
@@ -39,15 +39,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: size.height * .5,
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(50),
-                            bottomRight: Radius.circular(50),
-                          ),
-                          // image: DecorationImage(
-                          //     fit: BoxFit.fill,
-                          //     image: AssetImage("assets/images/top_header.jpg"))
-                              ),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: Colors.black54,
+                              blurRadius: 40.0,
+                              offset: Offset(0.0, 0.75))
+                        ],
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(80),
+                          bottomRight: Radius.circular(80),
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -62,10 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20)))),
+                                  BorderRadius.all(Radius.circular(30)))),
                       child: Container(
-                        height: 200,
+                        height: size.height * .3,
                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
                           image: DecorationImage(
                               fit: BoxFit.fitWidth,
                               image: AssetImage("assets/images/gif1.gif")),
@@ -82,7 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: 84,
+                      height: size.height * .17,
+
                       // color: Colors.yellow,
                       margin: EdgeInsets.only(bottom: 210),
                       child: Row(
@@ -93,35 +98,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             backgroundImage: NetworkImage(
                                 'https://upload.wikimedia.org/wikipedia/en/f/fe/Srmseal.png'),
                           ),
-                          SizedBox(
-                            width: 55,
-                          ),
+                          // SizedBox(
+                          //   width: 55,
+                          // ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              // Text(
-                              //   'SRM PRO',
-                              //   style: TextStyle(
-                              //       fontFamily: "Montserrat Medium",
-                              //       color: Colors.white,
-                              //       fontSize: 20),
-                              // ),
-                            DefaultTextStyle(
-                              style:const TextStyle(
-                                fontSize: 25,
-                                color: Colors.black
+                              DefaultTextStyle(
+                                style: const TextStyle(
+                                    fontSize: 21, color: Colors.black),
+                                child: Text("   App Name"),
                               ),
-                            child: AnimatedTextKit(
-                                repeatForever: true,
-                                pause: Duration(milliseconds: 1500),
-                                animatedTexts: [
-                                  // TyperAnimatedText('SRM FOREVER'),  
-                                  RotateAnimatedText('SRM'),
-                                  RotateAnimatedText('FOREVER'),
-                                ],
-                              ),
-                            ),
+                              Text("damm"),
                               // Text(
                               //   '4101410141',
                               //   style: TextStyle(
@@ -134,40 +123,70 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 70,
+                    Container(
+                      height: size.height * .05, // to make this responsive
+                      // decoration: BoxDecoration(
+                      // color: Colors.black,
+                      // borderRadius: BorderRadius.circular(1000)),
                     ),
                     Expanded(
+                      flex: 1,
                       child: GridView.count(
-                        padding: const EdgeInsets.only(top:80),
-                        mainAxisSpacing: 30,
-                        crossAxisSpacing: 20,
+                        padding: const EdgeInsets.only(top: 40),
+                        mainAxisSpacing: 18,
+                        crossAxisSpacing: 13,
                         primary: false,
                         crossAxisCount: 2,
                         children: <Widget>[
                           //this is personal data
                           //card 1: personal
-                          Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            elevation: 10,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/images/personal.png',
-                                  height: 100,
-                                ),
-                                Text(
-                                  'Personal Data',
-                                  style: cardTextStyle,
-                                )
-                              ],
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    transitionDuration: Duration(seconds: 1),
+                                    transitionsBuilder: (context, animation,
+                                        animationTime, child) {
+                                      animation = CurvedAnimation(
+                                          parent: animation,
+                                          curve: Curves.elasticInOut);
+                                      return ScaleTransition(
+                                        alignment: Alignment.center,
+                                        scale: animation,
+                                        child: child,
+                                      );
+                                    },
+                                    pageBuilder:
+                                        (context, animation, animationTime) {
+                                      return placement();
+                                    },
+                                  ));
+                            },
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(40)),
+                              elevation: 10,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  Image.asset('assets/images/fang.png',
+                                      alignment: Alignment.center,
+                                      fit: BoxFit.fill),
+                                  Text(
+                                    'Placement Material',
+                                    style: TextStyle(
+                                        // fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'cardTextStyle'),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                           InkWell(
-                            onTap: (){
-                               Navigator.push(
+                            onTap: () {
+                              Navigator.push(
                                   context,
                                   PageRouteBuilder(
                                     transitionDuration: Duration(seconds: 1),
@@ -191,27 +210,36 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Card(
                               //card 2:Books
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Container(
                                 decoration: BoxDecoration(
-                                  // image: DecorationImage(
-                                  //     fit: BoxFit.fill,
-                                  //     alignment: Alignment.topCenter,
-                                  //     // image: AssetImage('assets/images/g1.jpg')
-                                  //     ),
-                                ),
+                                    // image: DecorationImage(
+                                    //     fit: BoxFit.fill,
+                                    //     alignment: Alignment.topCenter,
+                                    //     // image: AssetImage('assets/images/g1.jpg')
+                                    //     ),
+                                    ),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    Image.asset(
-                                      'assets/images/books.png', //add img here
-                                      height: 100,
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                            'assets/images/books.png', //add img here
+                                            height: 100),
+                                      ),
                                     ),
                                     //SizedBox(height: 10),
-                                    Text(
-                                      'Books',
-                                      style: cardTextStyle,
+                                    // SizedBox(height: 20),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text('Books',
+                                          style: TextStyle(
+                                              // fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: 'cardTextStyle')),
                                     )
                                   ],
                                 ),
@@ -221,12 +249,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           //card 3:gpa
                           InkWell(
                             onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) => Gpa()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Gpa()));
                             },
                             child: Card(
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -235,11 +265,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'assets/images/calc.png',
                                     height: 100,
                                   ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    'GPA Calculator',
-                                    style: cardTextStyle,
-                                  )
+                                  SizedBox(height: 30),
+                                  Text('GPA Calculator',
+                                      style: TextStyle(
+                                          // fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'))
                                 ],
                               ),
                             ),
@@ -297,7 +328,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Card(
                               //card 4:course notes
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(40)),
                               elevation: 10,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -306,11 +337,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'assets/images/notes.png',
                                     height: 100,
                                   ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    'Course Notes',
-                                    style: cardTextStyle,
-                                  )
+                                  SizedBox(height: 30),
+                                  Text('Course Notes',
+                                      style: TextStyle(
+                                          // fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'))
                                 ],
                               ),
                             ),
