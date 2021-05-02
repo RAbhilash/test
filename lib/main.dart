@@ -18,7 +18,6 @@ class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
-
 class _SplashScreenState extends State<SplashScreen> {
   startTime() async{
     var duration = new Duration(seconds:10);
@@ -37,8 +36,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return new Scaffold(
       body: new Center(
         child:new Container
-        (decoration:BoxDecoration(
-        color: Colors.blue,
+        (
+        height:(MediaQuery.of(context).size.height/1080)*2000,
+        width:(MediaQuery.of(context).size.width/1080)*2000,
+          decoration:BoxDecoration(
+        color: Colors.red[300],
         ),
         child: new Column
         (mainAxisAlignment: MainAxisAlignment.center,
@@ -46,10 +48,13 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(
               height:10,
             ),
-            Container(decoration: BoxDecoration(
+            Container(
+              height:(MediaQuery.of(context).size.height/1080)*500,
+              width:(MediaQuery.of(context).size.height/1080)*500,
+              decoration: BoxDecoration(
+                color:Colors.red[300],
               image:DecorationImage(
-                image: AssetImage('assets/images/gif22.png'
-                )
+                image: AssetImage('assets/images/gif22.png',)
               )
             ),
             ),
@@ -57,12 +62,14 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 15,
             ),
             Container(
-             child: Text('SRM MATE',style:TextStyle(fontWeight: FontWeight.bold,fontStyle:FontStyle.italic,fontSize: 50.0,fontFamily: 'MyFlutterApp'),)
+             child: Text('WELCOME',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 30.0),)
             ),
             Container(padding: EdgeInsets.fromLTRB(0,30,0,0),
-            child:CircularProgressIndicator(
-              backgroundColor: Colors.blueAccent,
-            ),),
+            // child:CircularProgressIndicator(
+            //   backgroundColor: Colors.white,
+            //   valueColor: ,
+            child: CircularProgressIndicator(backgroundColor: Colors.cyanAccent,valueColor:new AlwaysStoppedAnimation<Color>(Colors.yellow),),
+            ),
         ],)
       ),
       ),
