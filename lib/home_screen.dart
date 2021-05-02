@@ -5,7 +5,7 @@ import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/placment.dart';
-
+import 'package:app/aboutus.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // SizedBox(height: 70),
                     Container(
-                      height: size.height * .5,
+                      height: size.height * .45,
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
@@ -57,10 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Column(children: [
                   // SizedBox(height: size.height * .099),
                   SizedBox(
-                    height: 25,
+                    height: 15,
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 95, 20, 2),
+                    padding: const EdgeInsets.fromLTRB(20, 75, 20, 2),
                     child: ClipPath(
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
@@ -70,6 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: size.height * .3,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
+                          // border: Border.all(
+                          //   color:Colors.redAccent,
+                          // ),
                           image: DecorationImage(
                               fit: BoxFit.fitWidth,
                               image: AssetImage("assets/images/gif1.gif")),
@@ -86,10 +89,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: size.height * .17,
+                      height: size.height * .15,
 
                       // color: Colors.yellow,
-                      margin: EdgeInsets.only(bottom: 210),
+                      margin: EdgeInsets.only(bottom:200),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -108,9 +111,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               DefaultTextStyle(
                                 style: const TextStyle(
                                     fontSize: 21, color: Colors.black),
-                                child: Text("   App Name"),
+                                child: Text("           App Name",style: TextStyle(
+                                  fontWeight:FontWeight.bold,
+                                ),),
                               ),
-                              Text("damm"),
+                              Text("                  Fucking cool"),
                               // Text(
                               //   '4101410141',
                               //   style: TextStyle(
@@ -123,18 +128,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    Container(
-                      height: size.height * .05, // to make this responsive
-                      // decoration: BoxDecoration(
-                      // color: Colors.black,
-                      // borderRadius: BorderRadius.circular(1000)),
-                    ),
+                    // Container(
+                    //   height: size.height * .05, // to make this responsive
+                    //   // decoration: BoxDecoration(
+                    //   // color: Colors.black,
+                    //   // borderRadius: BorderRadius.circular(1000)),
+                    // ),
                     Expanded(
                       flex: 1,
                       child: GridView.count(
-                        padding: const EdgeInsets.only(top: 40),
-                        mainAxisSpacing: 18,
-                        crossAxisSpacing: 13,
+                        shrinkWrap: true
+                        ,
+                        physics: NeverScrollableScrollPhysics(),
+                        padding: const EdgeInsets.only(top: 0),
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 5,
                         primary: false,
                         crossAxisCount: 2,
                         children: <Widget>[
@@ -347,9 +355,79 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
+                          // SizedBox(
+                          //   height:300,
+                          // ),
+                        // Padding(
+                        //   padding: const EdgeInsets.fromLTRB(55,0,0,0),
+                        //   child: Container(
+                        //     padding: const EdgeInsets.fromLTRB(0,0, 15,5),
+                        //     decoration: BoxDecoration(
+                        //     border: Border.all(
+                        //       color:Colors.blue
+                        //     )  
+                        //     ),
+                            
+                        //     child:
+                        //         Text(
+                        //           '@ here comes the footer',style:TextStyle(fontFamily:'Cupartino')
+                        //         ),
+                              
+                            
+                        //   ),
+                        // )
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height:19,
+                    ),
+                  Row(
+                    children: <Widget>[
+                      SizedBox(width:55),
+                      Container(
+                        
+                        // decoration:BoxDecoration(
+                        //   border:Border.all(
+                        //     color:Colors.white,
+                          
+                        //   )
+                        // ),
+                        child: Text('This is our footer'),
+
+                      ),
+                      SizedBox(
+                        width:35
+                      ),
+                      InkWell(
+                        onTap:(){
+                          Navigator.push(
+                                    context,
+                                    PageRouteBuilder(
+                                      transitionDuration: Duration(seconds: 1),
+                                      transitionsBuilder: (context, animation,
+                                          animationTime, child) {
+                                        animation = CurvedAnimation(
+                                            parent: animation,
+                                            curve: Curves.elasticInOut);
+                                        return ScaleTransition(
+                                          alignment: Alignment.center,
+                                          scale: animation,
+                                          child: child,
+                                        );
+                                      },
+                                      pageBuilder:
+                                          (context, animation, animationTime) {
+                                        return aboutus();
+                                      },
+                                    ));
+                        },
+                          child: Container(
+                          child:Text(" don't click!"),
+                        ),
+                      )
+                    ],
+                  )
                   ],
                 ),
               ),

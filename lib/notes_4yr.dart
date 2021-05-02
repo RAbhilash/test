@@ -47,11 +47,12 @@ class yearfour extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context);
     return DefaultTabController(
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.orangeAccent[400],
             title: Text('Fourth Year'),
             bottom: TabBar(
               tabs: <Widget>[
@@ -64,11 +65,14 @@ class yearfour extends StatelessWidget {
               ],
             ),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              _sem(data1),
-              _sem(data2),
-            ],
+          body: Container(
+            decoration: BoxDecoration(color: Colors.grey.shade200),
+            child: TabBarView(
+              children: <Widget>[
+                _sem(data1),
+                _sem(data2),
+              ],
+            ),
           )),
     );
   }
@@ -83,6 +87,7 @@ class yearfour extends StatelessWidget {
 
 Widget item(
     BuildContext context, int index, String subject, String url, String asset) {
+  var size = MediaQuery.of(context).size;
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
@@ -102,10 +107,17 @@ Widget item(
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 100,
+                  // width: 190,
+                  decoration: BoxDecoration(border: Border.all(
+                    color:Colors.pink
+                  )),
+                  height: (size.width / 1920) * 500,
+                  width: (size.width / 1080) * 190,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(0),
+                      bottomLeft: Radius.circular(0),
+                    ),
                     child: Image(
                       fit: BoxFit.contain,
                       alignment: Alignment.topRight,
@@ -127,21 +139,25 @@ Widget tab(BuildContext context, String s, String url) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
+        padding: const EdgeInsets.all(8.0),
         child: Container(
-          width: size.width / 3,
+          width: size.width / 2.8,
           child: Text(
             s,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
+            style: TextStyle(fontSize: 17),
           ),
         ),
       ),
       Padding(
         padding: EdgeInsets.only(left: 8),
         child: ElevatedButton.icon(
-          label: Text('View'),
+          style: ElevatedButton.styleFrom(primary: Colors.orange[600]),
+          label: Text(
+            'View',
+          ),
           icon: Icon(
             MyFlutterApp.drive,
             size: 15,
