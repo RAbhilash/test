@@ -5,7 +5,7 @@ import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/placment.dart';
-import 'package:app/aboutus.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // SizedBox(height: 70),
                     Container(
-                      height: size.height * .45,
+                      height: size.height * .4,
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
@@ -57,10 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Column(children: [
                   // SizedBox(height: size.height * .099),
                   SizedBox(
-                    height: 15,
+                    height: size.height * .087,
                   ),
+
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 75, 20, 2),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 2),
                     child: ClipPath(
                       clipper: ShapeBorderClipper(
                           shape: RoundedRectangleBorder(
@@ -70,9 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: size.height * .3,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
-                          // border: Border.all(
-                          //   color:Colors.redAccent,
-                          // ),
                           image: DecorationImage(
                               fit: BoxFit.fitWidth,
                               image: AssetImage("assets/images/gif1.gif")),
@@ -85,14 +83,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SafeArea(
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding:
+                    EdgeInsets.only(top: 15, right: 15, left: 15, bottom: 3),
                 child: Column(
                   children: <Widget>[
                     Container(
-                      height: size.height * .15,
+                      height: size.height * .2,
 
                       // color: Colors.yellow,
-                      margin: EdgeInsets.only(bottom:200),
+                      margin: EdgeInsets.only(bottom: size.height * .24),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -111,18 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               DefaultTextStyle(
                                 style: const TextStyle(
                                     fontSize: 21, color: Colors.black),
-                                child: Text("           App Name",style: TextStyle(
-                                  fontWeight:FontWeight.bold,
-                                ),),
+                                child: Text("   App Name"),
                               ),
-                              Text("                  Fucking cool"),
-                              // Text(
-                              //   '4101410141',
-                              //   style: TextStyle(
-                              //       fontSize: 14,
-                              //       color: Colors.redAccent,
-                              //       fontFamily: "Montserrat Regular"),
-                              // )
+                              Text("damm"),
                             ],
                           )
                         ],
@@ -130,24 +120,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     // Container(
                     //   height: size.height * .05, // to make this responsive
-                    //   // decoration: BoxDecoration(
-                    //   // color: Colors.black,
-                    //   // borderRadius: BorderRadius.circular(1000)),
                     // ),
                     Expanded(
                       flex: 1,
                       child: GridView.count(
-                        shrinkWrap: true
-                        ,
-                        physics: NeverScrollableScrollPhysics(),
-                        padding: const EdgeInsets.only(top: 0),
-                        mainAxisSpacing: 10,
+                        // physics: NeverScrollableScrollPhysics(),
+                        // padding: const EdgeInsets.only(bottom: 20),
+                        mainAxisSpacing: 1,
                         crossAxisSpacing: 5,
-                        primary: false,
+                        primary: true,
                         crossAxisCount: 2,
                         children: <Widget>[
                           //this is personal data
-                          //card 1: personal
+                          //card 1: personal2
                           InkWell(
                             onTap: () {
                               Navigator.push(
@@ -178,15 +163,24 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: <Widget>[
-                                  Image.asset('assets/images/fang.png',
-                                      alignment: Alignment.center,
-                                      fit: BoxFit.fill),
-                                  Text(
-                                    'Placement Material',
-                                    style: TextStyle(
-                                        // fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'cardTextStyle'),
+                                  Expanded(
+                                    flex: 2,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(15.0),
+                                      child: Image.asset(
+                                          'assets/images/fang1.png',
+                                          alignment: Alignment.center,
+                                          fit: BoxFit.fill),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      'Placement Material',
+                                      style: TextStyle(
+                                          // fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'cardTextStyle'),
+                                    ),
                                   )
                                 ],
                               ),
@@ -269,16 +263,23 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Image.asset(
-                                    'assets/images/calc.png',
-                                    height: 100,
+                                  Expanded(
+                                    flex: 2,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Image.asset(
+                                        'assets/images/calc.png',
+                                      ),
+                                    ),
                                   ),
-                                  SizedBox(height: 30),
-                                  Text('GPA Calculator',
-                                      style: TextStyle(
-                                          // fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'cardTextStyle'))
+                                  Expanded(
+                                    flex: 1,
+                                    child: Text('GPA Calculator',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            // fontSize: 20,
+                                            fontFamily: 'cardTextStyle')),
+                                  )
                                 ],
                               ),
                             ),
@@ -341,93 +342,30 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Image.asset(
-                                    'assets/images/notes.png',
-                                    height: 100,
+                                  Expanded(
+                                    flex: 2,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        'assets/images/notes.png',
+                                        // height: 100,
+                                      ),
+                                    ),
                                   ),
-                                  SizedBox(height: 30),
-                                  Text('Course Notes',
-                                      style: TextStyle(
-                                          // fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'cardTextStyle'))
+                                  Expanded(
+                                    child: Text('Course Notes',
+                                        style: TextStyle(
+                                            // fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'cardTextStyle')),
+                                  )
                                 ],
                               ),
                             ),
                           ),
-                          // SizedBox(
-                          //   height:300,
-                          // ),
-                        // Padding(
-                        //   padding: const EdgeInsets.fromLTRB(55,0,0,0),
-                        //   child: Container(
-                        //     padding: const EdgeInsets.fromLTRB(0,0, 15,5),
-                        //     decoration: BoxDecoration(
-                        //     border: Border.all(
-                        //       color:Colors.blue
-                        //     )  
-                        //     ),
-                            
-                        //     child:
-                        //         Text(
-                        //           '@ here comes the footer',style:TextStyle(fontFamily:'Cupartino')
-                        //         ),
-                              
-                            
-                        //   ),
-                        // )
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height:19,
-                    ),
-                  Row(
-                    children: <Widget>[
-                      SizedBox(width:55),
-                      Container(
-                        
-                        // decoration:BoxDecoration(
-                        //   border:Border.all(
-                        //     color:Colors.white,
-                          
-                        //   )
-                        // ),
-                        child: Text('This is our footer'),
-
-                      ),
-                      SizedBox(
-                        width:35
-                      ),
-                      InkWell(
-                        onTap:(){
-                          Navigator.push(
-                                    context,
-                                    PageRouteBuilder(
-                                      transitionDuration: Duration(seconds: 1),
-                                      transitionsBuilder: (context, animation,
-                                          animationTime, child) {
-                                        animation = CurvedAnimation(
-                                            parent: animation,
-                                            curve: Curves.elasticInOut);
-                                        return ScaleTransition(
-                                          alignment: Alignment.center,
-                                          scale: animation,
-                                          child: child,
-                                        );
-                                      },
-                                      pageBuilder:
-                                          (context, animation, animationTime) {
-                                        return aboutus();
-                                      },
-                                    ));
-                        },
-                          child: Container(
-                          child:Text(" don't click!"),
-                        ),
-                      )
-                    ],
-                  )
                   ],
                 ),
               ),

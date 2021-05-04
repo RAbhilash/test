@@ -1,6 +1,7 @@
 import 'package:app/fontlib/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:responsive_screen/responsive_screen.dart';
 
 class detail {
   String subject, asset, url;
@@ -83,6 +84,8 @@ class yearone extends StatelessWidget {
 
 Widget item(
     BuildContext context, int index, String subject, String url, String asset) {
+  final wp = Screen(context).wp; //specify wp
+  final hp = Screen(context).hp;
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
@@ -93,21 +96,29 @@ Widget item(
             borderRadius: BorderRadius.circular(24.0),
             shadowColor: Color(0x802196F3),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16.0),
-                    child: tab(context, subject, url),
+                    child: tab(
+                      context,
+                      subject,
+                      url,
+                      wp(75) - 32,
+                      hp(5),
+                    ),
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 100,
+                  width: wp(25),
+                  height: hp(21),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(24),
+                        topRight: Radius.circular(24)),
                     child: Image(
-                      fit: BoxFit.contain,
+                      fit: BoxFit.fill,
                       alignment: Alignment.topRight,
                       image: AssetImage(asset),
                     ),
@@ -120,7 +131,7 @@ Widget item(
   );
 }
 
-Widget tab(BuildContext context, String s, String url) {
+Widget tab(BuildContext context, String s, String url, var wp, var hp) {
   var size = MediaQuery.of(context).size;
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -129,7 +140,8 @@ Widget tab(BuildContext context, String s, String url) {
       Padding(
         padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
         child: Container(
-          width: size.width / 3,
+          height: hp,
+          width: wp,
           child: Text(
             s,
             softWrap: true,

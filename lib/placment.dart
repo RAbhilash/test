@@ -117,7 +117,7 @@ class placement extends StatelessWidget {
                         child: Container(
                           child: Image.asset(
                             "assets/images/fang.png",
-                            fit: BoxFit.fitHeight,
+                            fit: BoxFit.fitWidth,
                           ),
                         ),
                       )),

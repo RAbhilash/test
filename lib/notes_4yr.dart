@@ -108,9 +108,8 @@ Widget item(
                 ),
                 Container(
                   // width: 190,
-                  decoration: BoxDecoration(border: Border.all(
-                    color:Colors.pink
-                  )),
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.pink)),
                   height: (size.width / 1920) * 500,
                   width: (size.width / 1080) * 190,
                   child: ClipRRect(
