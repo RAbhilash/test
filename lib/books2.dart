@@ -1,58 +1,107 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:app/fontlib/my_flutter_app_icons.dart';
 
 class detail {
-  final String name, asset, subtext;
-  detail(this.name, this.asset, this.subtext);
+  String subject, asset, subtext;
+  detail(this.subject, this.asset, this.subtext);
 }
 
 class booksyeartwo extends StatelessWidget {
-  List<String> subject1 = ["Physics", "Electrical", "English"],
-      subject2 = ["Mechanical", "Chemisty", "PPS"];
-  List<String> subtext1 = ["subtext1", "subtext2", "subtext3"],
-      subtext2 = ["subtext1", "subtext2", "subtext3"];
-  List<String> asset1 = [""], asset2 = [""];
-  yeartwo() {
-    subject1.sort();
-    subject2.sort();
-    subtext1.sort();
-    subtext2.sort();
-  }
   @override
   Widget build(BuildContext context) {
+    List<detail> data1 = [], data2 = [];
+    data2.add(detail("DBMS", "assets/images/3.png",
+        "https://drive.google.com/file/d/1o8hYb7HD_FY_7penY2H9WIvxAdAt9tGG/view?usp=sharing"));
+    data2.add(detail("Compiler Design", "assets/images/1.png",
+        "https://drive.google.com/file/d/10iItECrxtaFXTjhhOFakKsNF-oMZ3DzW/view?usp=sharing"));
+    data2.add(detail("Fibre Optics And Opto-Electronics", "assets/images/2.png",
+        "https://drive.google.com/file/d/1aNOKMt4uJgwzU6f3FHpGH1oiI-bupnOI/view?usp=sharing"));
+    data2.add(detail(
+        "Employability Skills And Practices",
+        "assets/images/2.png",
+        "https://drive.google.com/file/d/1aNOKMt4uJgwzU6f3FHpGH1oiI-bupnOI/view?usp=sharing"));
+    data2.add(detail("Fibre Optics And Opto-Electronics", "assets/images/2.png",
+        "https://drive.google.com/file/d/1aNOKMt4uJgwzU6f3FHpGH1oiI-bupnOI/view?usp=sharing"));
+    data2.add(detail("Fibre Optics And Opto-Electronics", "assets/images/2.png",
+        "https://drive.google.com/file/d/1aNOKMt4uJgwzU6f3FHpGH1oiI-bupnOI/view?usp=sharing"));
+    data2.add(detail("Fibre Optics And Opto-Electronics", "assets/images/2.png",
+        "https://drive.google.com/file/d/1aNOKMt4uJgwzU6f3FHpGH1oiI-bupnOI/view?usp=sharing"));
+    data1.add(detail("Mechanical", "assets/images/books.png", "subtext1"));
+    data1.add(detail("Mechanical", "assets/images/books.png", "subtext1"));
+    data1.add(detail("Mechanical", "assets/images/books.png", "subtext1"));
+    data1.add(detail("Mechanical", "assets/images/books.png", "subtext1"));
+    data1.add(detail("Mechanical", "assets/images/books.png", "subtext1"));
+    data1..add(detail("Chemistry", "assets/images/books.png", "subtext1"));
+    data1.add(detail("PPs", "assets/images/books.png", "subtext1"));
+    Comparator<detail> comp = (a, b) => a.subject.compareTo(b.subject);
+    data1.sort(comp);
+    data2.sort(comp);
     return DefaultTabController(
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            title: Text('Second Year'),
+            backgroundColor: Colors.purple,
+            title: Text('Third Year'),
             bottom: TabBar(
+              indicatorColor: Colors.white,
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.white,
               tabs: <Widget>[
                 Tab(
-                  text: 'Sem 3',
+                  text: 'Sem 5',
                 ),
                 Tab(
-                  text: 'Sem 4',
+                  text: 'Sem 6',
                 ),
               ],
             ),
           ),
           body: TabBarView(
             children: <Widget>[
-              _sem(subject1, subtext1),
-              _sem(subject2, subtext2),
+              _sem(data1),
+              _sem(data2),
             ],
           )),
     );
   }
 
-  ListView _sem(List<String> subject, List<String> subtext) {
+  ListView _sem(List<detail> data) {
     return ListView.builder(
-        itemCount: subject.length,
-        itemBuilder: (BuildContext context, int index) =>
-            item(index, subject, subtext));
+        itemCount: data.length,
+        itemBuilder: (BuildContext context, int index) => item(
+              context,
+              index,
+              data[index].subject,
+              data[index].subtext,
+              data[index].asset,
+            ));
   }
 }
 
-Widget item(int index, List<String> subject, List<String> subtext) {
+_launchUrl(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Error!';
+  }
+}
+
+_launchUrlApp(String url) async {
+  if (await canLaunch(url)) {
+    await launch(
+      url,
+      forceSafariVC: true,
+      forceWebView: true,
+    );
+  } else {
+    throw 'Error!';
+  }
+}
+
+Widget item(
+    BuildContext context, int index, String subject, String url, String asset) {
+  var size = MediaQuery.of(context).size;
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
@@ -68,18 +117,24 @@ Widget item(int index, List<String> subject, List<String> subtext) {
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16.0),
-                    child: tab(subject[index], subtext[index]),
+                    child: tab(context, subject, url),
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 100,
+                  // width: 190,
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.pink)),
+                  height: (size.width / 1920) * 500,
+                  width: (size.width / 1080) * 220,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(0),
+                      bottomLeft: Radius.circular(0),
+                    ),
                     child: Image(
-                      fit: BoxFit.contain,
+                      fit: BoxFit.fitHeight,
                       alignment: Alignment.topRight,
-                      image: AssetImage("assets/images/thumbnail.jpg"),
+                      image: AssetImage(asset),
                     ),
                   ),
                 ),
@@ -90,21 +145,39 @@ Widget item(int index, List<String> subject, List<String> subtext) {
   );
 }
 
-Widget tab(String s, String subtext) {
+Widget tab(BuildContext context, String s, String url) {
+  var size = MediaQuery.of(context).size;
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
+        padding: const EdgeInsets.all(8.0),
         child: Container(
-          child: Text(s),
+          width: size.width / 2.8,
+          child: Text(
+            s,
+            softWrap: true,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+            style: TextStyle(fontSize: 17),
+          ),
         ),
       ),
       Padding(
         padding: EdgeInsets.only(left: 8),
-        child: Container(
-          child: Text(subtext),
+        child: ElevatedButton.icon(
+          style: ElevatedButton.styleFrom(primary: Colors.orange[600]),
+          label: Text(
+            'View',
+          ),
+          icon: Icon(
+            MyFlutterApp.drive,
+            size: 15,
+          ),
+          onPressed: () {
+            _launchUrl(url);
+          },
         ),
       ),
     ],

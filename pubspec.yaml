@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   animated_text_kit: ^4.2.0
+  assorted_layout_widgets: ^4.0.7
+  auto_size_text: ^2.1.0
   backdrop: ^0.5.3
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.19.3

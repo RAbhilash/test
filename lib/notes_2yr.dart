@@ -51,9 +51,10 @@ class yeartwo extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.red,
             title: Text('Second Year'),
             bottom: TabBar(
+              indicatorColor: Colors.white,
               tabs: <Widget>[
                 Tab(
                   text: 'Sem 3',
@@ -90,7 +91,10 @@ Widget item(
         child: Material(
             color: Colors.white,
             elevation: 10.0,
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24.0),
+              bottomLeft: Radius.circular(24.0),
+            ),
             shadowColor: Color(0x802196F3),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,7 +109,7 @@ Widget item(
                   width: 190,
                   height: 100,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.circular(0),
                     child: Image(
                       fit: BoxFit.contain,
                       alignment: Alignment.topRight,
@@ -141,6 +145,9 @@ Widget tab(BuildContext context, String s, String url) {
       Padding(
         padding: EdgeInsets.only(left: 8),
         child: ElevatedButton.icon(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.red,
+          ),
           label: Text('View'),
           icon: Icon(
             MyFlutterApp.drive,

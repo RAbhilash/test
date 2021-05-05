@@ -1,6 +1,9 @@
 import 'package:app/notes_1yr.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:app/fontlib/my_flutter_app_icons.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:responsive_screen/responsive_screen.dart';
 
 class detail {
   String subject, asset, subtext;
@@ -41,10 +44,11 @@ class booksyearthree extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.purple,
             title: Text('Third Year'),
             bottom: TabBar(
-              indicatorColor: Colors.purple[400],
-              labelColor: Colors.amberAccent,
+              indicatorColor: Colors.white,
+              labelColor: Colors.white,
               unselectedLabelColor: Colors.white,
               tabs: <Widget>[
                 Tab(
@@ -69,16 +73,16 @@ class booksyearthree extends StatelessWidget {
     return ListView.builder(
         itemCount: data.length,
         itemBuilder: (BuildContext context, int index) => item(
-            index,
-            data[index].subject,
-            data[index].asset,
-            data[index].subtext,
-            data,
-            context));
+              context,
+              index,
+              data[index].subject,
+              data[index].subtext,
+              data[index].asset,
+            ));
   }
 }
 
-_launchUrl(String url) async {
+_launchurl(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -98,18 +102,18 @@ _launchUrlApp(String url) async {
   }
 }
 
-Widget item(int index, String subject, String asset, String subtext,
-    List<detail> data, BuildContext context) {
+Widget item(
+    BuildContext context, int index, String subject, String url, String asset) {
+  var size = MediaQuery.of(context).size;
+  final wp = Screen(context).wp; //specify wp
+  final hp = Screen(context).hp;
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       child: FittedBox(
         child: Material(
             color: Colors.white,
-            elevation: 05.0,
+            elevation: 10.0,
             borderRadius: BorderRadius.circular(24.0),
             shadowColor: Color(0x802196F3),
             child: Row(
@@ -117,16 +121,26 @@ Widget item(int index, String subject, String asset, String subtext,
               children: <Widget>[
                 Container(
                   child: Padding(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      child: tab(context, subject, subtext)),
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: tab(context, subject, url, wp, hp),
+                  ),
+                ),
+                SizedBox(
+                  width: wp(1),
                 ),
                 Container(
-                  width: 190,
-                  height: 100,
+                  // width: 190,
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.pink)),
+                  height: hp(15),
+                  width: wp(30),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(0),
+                      bottomLeft: Radius.circular(0),
+                    ),
                     child: Image(
-                      fit: BoxFit.contain,
+                      fit: BoxFit.fitHeight,
                       alignment: Alignment.topRight,
                       image: AssetImage(asset),
                     ),
@@ -139,32 +153,46 @@ Widget item(int index, String subject, String asset, String subtext,
   );
 }
 
-Widget tab(BuildContext context, String s, String url) {
+Widget tab(BuildContext context, String s, String url, var wp, var hp) {
   var size = MediaQuery.of(context).size;
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.fromLTRB(8, 0, 0, 8),
+        padding: const EdgeInsets.fromLTRB(8, 8, 32, 8),
         child: Container(
-          width: size.width / 3.5,
+          height: hp(5),
+          width: wp(74),
           child: Text(
             s,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
+            style: TextStyle(
+              fontSize: hp(4),
+            ),
           ),
         ),
       ),
-      Padding(
-        padding: EdgeInsets.only(left: 8),
-        child: ElevatedButton.icon(
-          label: Text('View'),
-          icon: Icon(Icons.insert_drive_file),
-          onPressed: () {
-            _launchUrlApp(url);
-          },
+      SizedBox(
+        height: hp(5),
+        width: wp(30),
+        child: Padding(
+          padding: EdgeInsets.only(left: 8),
+          child: ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(primary: Colors.orange[600]),
+            label: Text(
+              'View',
+            ),
+            icon: Icon(
+              MyFlutterApp.drive,
+              size: 15,
+            ),
+            onPressed: () {
+              _launchurl(url);
+            },
+          ),
         ),
       ),
     ],

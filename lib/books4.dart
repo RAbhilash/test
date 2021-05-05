@@ -26,6 +26,7 @@ class booksyearfour extends StatelessWidget {
           appBar: AppBar(
             title: Text('Fourth Year'),
             bottom: TabBar(
+              indicatorColor: Colors.white,
               tabs: <Widget>[
                 Tab(
                   text: 'Sem 7',
@@ -49,11 +50,13 @@ class booksyearfour extends StatelessWidget {
     return ListView.builder(
         itemCount: subject.length,
         itemBuilder: (BuildContext context, int index) =>
-            item(index, subject, subtext));
+            item(index, subject, subtext, context));
   }
 }
 
-Widget item(int index, List<String> subject, List<String> subtext) {
+Widget item(int index, List<String> subject, List<String> subtext,
+    BuildContext context) {
+  var size = MediaQuery.of(context).size;
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
@@ -61,7 +64,10 @@ Widget item(int index, List<String> subject, List<String> subtext) {
         child: Material(
             color: Colors.white,
             elevation: 10.0,
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24.0),
+              bottomLeft: Radius.circular(24.0),
+            ),
             shadowColor: Color(0x802196F3),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,10 +79,10 @@ Widget item(int index, List<String> subject, List<String> subtext) {
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 100,
+                  height: (size.width / 1920) * 500,
+                  width: (size.width / 1080) * 190,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.circular(0.0),
                     child: Image(
                       fit: BoxFit.contain,
                       alignment: Alignment.topRight,

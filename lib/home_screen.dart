@@ -126,10 +126,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: GridView.count(
                         // physics: NeverScrollableScrollPhysics(),
                         // padding: const EdgeInsets.only(bottom: 20),
+                        crossAxisCount: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? 2
+                            : 4,
                         mainAxisSpacing: 1,
                         crossAxisSpacing: 5,
                         primary: true,
-                        crossAxisCount: 2,
                         children: <Widget>[
                           //this is personal data
                           //card 1: personal2

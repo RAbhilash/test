@@ -51,9 +51,10 @@ class yearthree extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.purple,
             title: Text('Third Year'),
             bottom: TabBar(
+              indicatorColor: Colors.white,
               tabs: <Widget>[
                 Tab(
                   text: 'Sem 5',
@@ -83,6 +84,7 @@ class yearthree extends StatelessWidget {
 
 Widget item(
     BuildContext context, int index, String subject, String url, String asset) {
+  var size = MediaQuery.of(context).size;
   return Padding(
     padding: const EdgeInsets.all(16.0),
     child: Container(
@@ -90,7 +92,10 @@ Widget item(
         child: Material(
             color: Colors.white,
             elevation: 10.0,
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(24.0),
+              bottomLeft: Radius.circular(24.0),
+            ),
             shadowColor: Color(0x802196F3),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,10 +107,13 @@ Widget item(
                   ),
                 ),
                 Container(
-                  width: 190,
-                  height: 100,
+                  height: (size.width / 1920) * 500,
+                  width: (size.width / 1080) * 190,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(0.0),
+                      bottomLeft: Radius.circular(0.0),
+                    ),
                     child: Image(
                       fit: BoxFit.contain,
                       alignment: Alignment.topRight,
@@ -141,6 +149,9 @@ Widget tab(BuildContext context, String s, String url) {
       Padding(
         padding: EdgeInsets.only(left: 8),
         child: ElevatedButton.icon(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.purple,
+          ),
           label: Text('View'),
           icon: Icon(
             MyFlutterApp.drive,

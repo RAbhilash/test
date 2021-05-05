@@ -55,6 +55,7 @@ class yearfour extends StatelessWidget {
             backgroundColor: Colors.orangeAccent[400],
             title: Text('Fourth Year'),
             bottom: TabBar(
+              indicatorColor: Colors.white,
               tabs: <Widget>[
                 Tab(
                   text: 'Sem 1',
