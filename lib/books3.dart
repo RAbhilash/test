@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:app/fontlib/my_flutter_app_icons.dart';
+<<<<<<< HEAD
 // import 'package:auto_size_text/auto_size_text.dart';
+=======
+>>>>>>> 2a95634745740013b5a4fd50dd9d1558c7f4ff47
 import 'package:responsive_screen/responsive_screen.dart';
 class detail {
   String subject, asset, subtext;
@@ -242,9 +245,9 @@ Widget item(
                     child: tab(context, subject, url, wp, hp),
                   ),
                 ),
-                SizedBox(
-                  width: wp(1),
-                ),
+                // SizedBox(
+                //   width: wp(1),
+                // ),
                 Container(
                   // width: 190,
                   decoration:

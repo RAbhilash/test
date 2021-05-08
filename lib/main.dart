@@ -23,7 +23,7 @@ class Splash extends StatelessWidget {
     return SplashScreen(
       seconds: 1,
       navigateAfterSeconds: HomeScreen(),
-      image: Image.asset("assets/images/splash1.jpg"),
+      image: Image.asset("assets/images/logo.png"),
       photoSize: MediaQuery.of(context).size.width * .3,
       backgroundColor: Colors.red[300],
       loaderColor: Colors.white,
