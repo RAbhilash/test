@@ -5,7 +5,7 @@ import 'package:app/course_notes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/placment.dart';
-
+import 'package:responsive_screen/responsive_screen.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -18,7 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     // to get size
     var size = MediaQuery.of(context).size;
-
+    final hp = Screen(context).hp;
+    final wp = Screen(context).wp;
     // style
     var cardTextStyle = TextStyle(
         fontFamily: "Montserrat Regular",
@@ -199,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         animationTime, child) {
                                       animation = CurvedAnimation(
                                           parent: animation,
-                                          curve: Curves.elasticInOut);
+                                          curve: Curves.easeOutExpo);
                                       return ScaleTransition(
                                         alignment: Alignment.center,
                                         scale: animation,
@@ -231,9 +232,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Expanded(
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
+                                        child:Image.asset(
                                             'assets/images/books.png', //add img here
-                                            height: 100),
+                                            height: hp(10)),
                                       ),
                                     ),
                                     //SizedBox(height: 10),

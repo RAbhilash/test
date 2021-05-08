@@ -144,7 +144,7 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
         child: Container(
           height: hp(5),
           width: wp(75),
-          child: TextOneLine(
+          child: Text(
             s,
             overflow: TextOverflow.fade,
             style: TextStyle(
