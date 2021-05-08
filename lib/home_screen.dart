@@ -6,12 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app/placment.dart';
 import 'package:responsive_screen/responsive_screen.dart';
-<<<<<<< HEAD
-=======
 import 'package:foldable_sidebar/foldable_sidebar.dart';
 import 'package:swipedetector/swipedetector.dart';
 
->>>>>>> 2a95634745740013b5a4fd50dd9d1558c7f4ff47
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -27,41 +24,6 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-<<<<<<< HEAD
-    final hp = Screen(context).hp;
-    final wp = Screen(context).wp;
-    // style
-    var cardTextStyle = TextStyle(
-        fontFamily: "Montserrat Regular",
-        fontSize: 14,
-        color: Color.fromRGBO(63, 63, 63, 1)); //this is not really working
-
-    return Scaffold(
-      body: Container(
-        color: Colors.red[300],
-        child: Stack(
-          fit: StackFit.loose,
-          children: <Widget>[
-            Stack(
-              children: [
-                Column(
-                  children: [
-                    // SizedBox(height: 70),
-                    Container(
-                      height: size.height * .4,
-                      decoration: BoxDecoration(
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Colors.black54,
-                              blurRadius: 40.0,
-                              offset: Offset(0.0, 0.75))
-                        ],
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(80),
-                          bottomRight: Radius.circular(80),
-                        ),
-=======
     return Container(
       color: Colors.red[300],
       child: Stack(
@@ -85,7 +47,6 @@ class _FirstScreenState extends State<FirstScreen> {
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(80),
                         bottomRight: Radius.circular(80),
->>>>>>> 2a95634745740013b5a4fd50dd9d1558c7f4ff47
                       ),
                     ),
                   )
@@ -167,67 +128,6 @@ class _FirstScreenState extends State<FirstScreen> {
                                     fontFamily: 'MyFlutterApp.AlluraRegular'),
                               ),
                             ),
-<<<<<<< HEAD
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                    transitionDuration: Duration(seconds: 1),
-                                    transitionsBuilder: (context, animation,
-                                        animationTime, child) {
-                                      animation = CurvedAnimation(
-                                          parent: animation,
-                                          curve: Curves.easeOutExpo);
-                                      return ScaleTransition(
-                                        alignment: Alignment.center,
-                                        scale: animation,
-                                        child: child,
-                                      );
-                                    },
-                                    pageBuilder:
-                                        (context, animation, animationTime) {
-                                      return Books();
-                                    },
-                                  ));
-                            },
-                            child: Card(
-                              //card 2:Books
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40)),
-                              elevation: 10,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    // image: DecorationImage(
-                                    //     fit: BoxFit.fill,
-                                    //     alignment: Alignment.topCenter,
-                                    //     // image: AssetImage('assets/images/g1.jpg')
-                                    //     ),
-                                    ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child:Image.asset(
-                                            'assets/images/books.png', //add img here
-                                            height: hp(10)),
-                                      ),
-                                    ),
-                                    //SizedBox(height: 10),
-                                    // SizedBox(height: 20),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text('Books',
-                                          style: TextStyle(
-                                              // fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: 'cardTextStyle')),
-                                    )
-                                  ],
-=======
                           ],
                         )
                       ],
@@ -290,7 +190,6 @@ class _FirstScreenState extends State<FirstScreen> {
                                         alignment: Alignment.center,
                                         fit: BoxFit.fill),
                                   ),
->>>>>>> 2a95634745740013b5a4fd50dd9d1558c7f4ff47
                                 ),
                                 Expanded(
                                   child: Text(
