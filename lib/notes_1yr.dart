@@ -168,15 +168,9 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
       Padding(
         padding: EdgeInsets.fromLTRB(8, 0, 10, 8),
         child: Container(
-<<<<<<< HEAD
-          height: hp(5),
-          width: wp(75),
-          child: Text(
-=======
           height: hp(4),
           width: wp(60),
           child: TextOneLine(
->>>>>>> 2a95634745740013b5a4fd50dd9d1558c7f4ff47
             s,
             overflow: TextOverflow.fade,
             style: TextStyle(
