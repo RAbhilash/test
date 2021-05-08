@@ -156,12 +156,12 @@ class _FirstScreenState extends State<FirstScreen> {
                             Navigator.push(
                                 context,
                                 PageRouteBuilder(
-                                  transitionDuration: Duration(seconds: 1),
+                                  transitionDuration: Duration(seconds:3),
                                   transitionsBuilder: (context, animation,
                                       animationTime, child) {
                                     animation = CurvedAnimation(
                                         parent: animation,
-                                        curve: Curves.elasticInOut);
+                                        curve: Curves.easeOutExpo);
                                     return ScaleTransition(
                                       alignment: Alignment.center,
                                       scale: animation,
@@ -205,16 +205,16 @@ class _FirstScreenState extends State<FirstScreen> {
                           ),
                         ),
                         InkWell(
-                          onTap: () {
+                          onTap:(){
                             Navigator.push(
                                 context,
                                 PageRouteBuilder(
-                                  transitionDuration: Duration(seconds: 1),
+                                  transitionDuration: Duration(seconds: 3),
                                   transitionsBuilder: (context, animation,
                                       animationTime, child) {
                                     animation = CurvedAnimation(
                                         parent: animation,
-                                        curve: Curves.elasticInOut);
+                                        curve: Curves.easeOutExpo);
                                     return ScaleTransition(
                                       alignment: Alignment.center,
                                       scale: animation,

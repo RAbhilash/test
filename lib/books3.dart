@@ -61,24 +61,24 @@ class _booksyearthreeState extends State<booksyearthree>with SingleTickerProvide
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.purple,
-            title: Text('Third Year',style: TextStyle(
-              fontSize: hp(5),
-            )),
-            bottom: TabBar(
-              indicatorColor: Colors.white,
-              labelColor: Colors.white,
-              unselectedLabelColor: Colors.grey.shade300,
-              tabs: <Widget>[
-                Tab(
-                     child:Text(
-                      'Sem 5',style: TextStyle(
-                        fontSize:hp(2)
-                      ),
-                    ),
-                  ),
-                Tab(
-                    child:Text(
+          backgroundColor: Colors.purple,
+          title: Text('Third Year',style: TextStyle(
+          fontSize: hp(5),
+          )),
+          bottom: TabBar(
+            indicatorColor: Colors.white,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.grey.shade300,
+            tabs: <Widget>[
+            Tab(
+                child:Text(
+                'Sem 5',style: TextStyle(
+                fontSize:hp(2)
+                ),
+            ),
+          ),
+            Tab(
+                child:Text(
                       'Sem 6',style: TextStyle(
                         fontSize:hp(2)
                       ),
@@ -95,8 +95,7 @@ class _booksyearthreeState extends State<booksyearthree>with SingleTickerProvide
           )),
     );
   }
-
-  ListView _sem(List<detail> data) {
+ListView _sem(List<detail> data) {
     return ListView.builder(
         itemCount: data.length,
         itemBuilder: (BuildContext context, int index) => item(
@@ -196,15 +195,13 @@ class _booksyearthreeState extends State<booksyearthree>with SingleTickerProvide
 //             ));
 //   }
 // }
-
 _launchurl(String url) async {
-  if (await canLaunch(url)) {
+  if(await canLaunch(url)) {
     await launch(url);
   } else {
     throw 'Error!';
   }
 }
-
 _launchUrlApp(String url) async {
   if (await canLaunch(url)) {
     await launch(
@@ -251,21 +248,21 @@ Widget item(
                   height: hp(20),
                   width: wp(30),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(0),
-                      bottomLeft: Radius.circular(0),
-                    ),
-                    child:Image.network(asset,fit:BoxFit.fill),
+                  borderRadius:BorderRadius.only(
+                  topLeft: Radius.circular(0),
+                  bottomLeft: Radius.circular(0),
                   ),
-                ),
-              ],
-            )),
+                child:Image.network(asset,fit:BoxFit.fill),
+              ),
+            ),
+          ],
+        )),
       ),
     ),
   );
-      }
-      else{
-        var size = MediaQuery.of(context).size;
+}
+  else{
+  var size = MediaQuery.of(context).size;
   final wp = Screen(context).wp; //specify wp
   final hp = Screen(context).hp;
   return Padding(
@@ -341,16 +338,15 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
       ),
     ),
     Container(
-    
     height: hp(5),
     width: wp(30),
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(25),
+    borderRadius: BorderRadius.circular(25),
       // color:Color.fromARGB(255, 27, 28, 30),
-      boxShadow: [BoxShadow(
-        color:Color.fromARGB(130, 237, 125, 50),
-        blurRadius: _animation.value,
-        spreadRadius: _animation.value,
+    boxShadow: [BoxShadow(
+      color:Color.fromARGB(130, 237, 125, 50),
+      blurRadius: _animation.value,
+      spreadRadius: _animation.value,
       )]
     ),
     child: Padding(

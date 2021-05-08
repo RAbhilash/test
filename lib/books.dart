@@ -71,239 +71,237 @@ class _BooksState extends State<Books> {
             Container(
               height:hp(65),
               width:wp(100),
-              child: Flexible(
-                child: Ink(
-                  color: Colors.white,
-                  child: Center(
-                    child: GridView.count(
-                      shrinkWrap: true,
-                      padding: EdgeInsets.fromLTRB(20, 20, 15, 15),
-                      crossAxisCount: MediaQuery.of(context).orientation ==
-                                    Orientation.portrait
-                                ? 2
-                                : 4,
-                      mainAxisSpacing: 40,
-                      crossAxisSpacing: 20,
-                      primary: false,
-                      children: <Widget>[
-                        Theme(
-                          data: ThemeData(splashColor: Colors.blue),
-                          child: InkWell(
-                            highlightColor: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => booksyearone()));
-                            },
-                            child: ClipPath(
-                              clipper: ShapeBorderClipper(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)))),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Color.fromRGBO(220, 220, 220, 200),
-                                    border: Border(
-                                        bottom: BorderSide(
-                                      width: 10,
-                                      color: Colors.blue,
-                                    ))),
-                                child: Padding(
-                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Expanded(
-                                        flex: 5,
-                                        child: Image(
-                                            width: 100,
-                                            image: AssetImage(
-                                                'assets/images/yearone.png')),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Center(
-                                          child: Text(
-                                            'FIRST YEAR',
-                                            style: TextStyle(
-                                              fontFamily: "Montserrat Regular",
-                                            ),
+              child: Ink(
+                color: Colors.white,
+                child: Center(
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    padding: EdgeInsets.fromLTRB(20, 20, 15, 15),
+                    crossAxisCount: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? 2
+                              : 4,
+                    mainAxisSpacing: 40,
+                    crossAxisSpacing: 20,
+                    primary: false,
+                    children: <Widget>[
+                      Theme(
+                        data: ThemeData(splashColor: Colors.blue),
+                        child: InkWell(
+                          highlightColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(10),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => booksyearone()));
+                          },
+                          child: ClipPath(
+                            clipper: ShapeBorderClipper(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)))),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(220, 220, 220, 200),
+                                  border: Border(
+                                      bottom: BorderSide(
+                                    width: 10,
+                                    color: Colors.blue,
+                                  ))),
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Expanded(
+                                      flex: 5,
+                                      child: Image(
+                                          width: 100,
+                                          image: AssetImage(
+                                              'assets/images/yearone.png')),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Center(
+                                        child: Text(
+                                          'FIRST YEAR',
+                                          style: TextStyle(
+                                            fontFamily: "Montserrat Regular",
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        Theme(
-                          data: ThemeData(splashColor: Colors.red),
-                          child: InkWell(
-                            highlightColor: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => booksyeartwo()));
-                            },
-                            child: ClipPath(
-                              clipper: ShapeBorderClipper(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)))),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Color.fromRGBO(220, 220, 220, 200),
-                                    border: Border(
-                                        bottom: BorderSide(
-                                      width: 10,
-                                      color: Colors.red,
-                                    ))),
-                                child: Padding(
-                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Expanded(
-                                        flex: 5,
-                                        child: Image(
-                                            width: 100,
-                                            image: AssetImage(
-                                                'assets/images/yeartwo.png')),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Center(
-                                          child: Text(
-                                            'SECOND YEAR',
-                                            style: TextStyle(
-                                              fontFamily: "Montserrat Regular",
-                                            ),
+                      ),
+                      Theme(
+                        data: ThemeData(splashColor: Colors.red),
+                        child: InkWell(
+                          highlightColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(10),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => booksyeartwo()));
+                          },
+                          child: ClipPath(
+                            clipper: ShapeBorderClipper(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)))),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(220, 220, 220, 200),
+                                  border: Border(
+                                      bottom: BorderSide(
+                                    width: 10,
+                                    color: Colors.red,
+                                  ))),
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Expanded(
+                                      flex: 5,
+                                      child: Image(
+                                          width: 100,
+                                          image: AssetImage(
+                                              'assets/images/yeartwo.png')),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Center(
+                                        child: Text(
+                                          'SECOND YEAR',
+                                          style: TextStyle(
+                                            fontFamily: "Montserrat Regular",
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        Theme(
-                          data: ThemeData(splashColor: Colors.purple),
-                          child: InkWell(
-                            highlightColor: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => booksyearthree()));
-                            },
-                            child: ClipPath(
-                              clipper: ShapeBorderClipper(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)))),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Color.fromRGBO(220, 220, 220, 200),
-                                    border: Border(
-                                        bottom: BorderSide(
-                                      width: 10,
-                                      color: Colors.purple,
-                                    ))),
-                                child: Padding(
-                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Expanded(
-                                        flex: 5,
-                                        child: Image(
-                                            width: 100,
-                                            image: AssetImage(
-                                                'assets/images/yearthree.png')),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Center(
-                                          child: Text(
-                                            'THIRD YEAR',
-                                            style: TextStyle(
-                                              fontFamily: "Montserrat Regular",
-                                            ),
+                      ),
+                      Theme(
+                        data: ThemeData(splashColor: Colors.purple),
+                        child: InkWell(
+                          highlightColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(10),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => booksyearthree()));
+                          },
+                          child: ClipPath(
+                            clipper: ShapeBorderClipper(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)))),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(220, 220, 220, 200),
+                                  border: Border(
+                                      bottom: BorderSide(
+                                    width: 10,
+                                    color: Colors.purple,
+                                  ))),
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Expanded(
+                                      flex: 5,
+                                      child: Image(
+                                          width: 100,
+                                          image: AssetImage(
+                                              'assets/images/yearthree.png')),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Center(
+                                        child: Text(
+                                          'THIRD YEAR',
+                                          style: TextStyle(
+                                            fontFamily: "Montserrat Regular",
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
                           ),
                         ),
-                        Theme(
-                          data: ThemeData(splashColor: Colors.orange),
-                          child: InkWell(
-                            highlightColor: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => booksyearfour()));
-                            },
-                            child: ClipPath(
-                              clipper: ShapeBorderClipper(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)))),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Color.fromRGBO(220, 220, 220, 200),
-                                    border: Border(
-                                        bottom: BorderSide(
-                                      width: 10,
-                                      color: Colors.orange,
-                                    ))),
-                                child: Padding(
-                                  padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Expanded(
-                                        flex: 5,
-                                        child: Image(
-                                            width: 100,
-                                            image: AssetImage(
-                                                'assets/images/yearfour.png')),
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Center(
-                                          child: Text(
-                                            'Fourth YEAR',
-                                            style: TextStyle(
-                                              fontFamily: "Montserrat Regular",
-                                            ),
+                      ),
+                      Theme(
+                        data: ThemeData(splashColor: Colors.orange),
+                        child: InkWell(
+                          highlightColor: Colors.transparent,
+                          borderRadius: BorderRadius.circular(10),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => booksyearfour()));
+                          },
+                          child: ClipPath(
+                            clipper: ShapeBorderClipper(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)))),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(220, 220, 220, 200),
+                                  border: Border(
+                                      bottom: BorderSide(
+                                    width: 10,
+                                    color: Colors.orange,
+                                  ))),
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Expanded(
+                                      flex: 5,
+                                      child: Image(
+                                          width: 100,
+                                          image: AssetImage(
+                                              'assets/images/yearfour.png')),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Center(
+                                        child: Text(
+                                          'Fourth YEAR',
+                                          style: TextStyle(
+                                            fontFamily: "Montserrat Regular",
                                           ),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
