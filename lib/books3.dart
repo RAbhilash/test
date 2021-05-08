@@ -2,7 +2,6 @@ import 'package:app/notes_1yr.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:app/fontlib/my_flutter_app_icons.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 class detail {
@@ -125,9 +124,9 @@ Widget item(
                     child: tab(context, subject, url, wp, hp),
                   ),
                 ),
-                SizedBox(
-                  width: wp(1),
-                ),
+                // SizedBox(
+                //   width: wp(1),
+                // ),
                 Container(
                   // width: 190,
                   decoration:

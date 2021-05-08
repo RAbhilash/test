@@ -226,7 +226,7 @@ class _GpaState extends State<Gpa> {
                         blurRadius: 20, spreadRadius: 18, color: Colors.black12)
                   ],
                 ),
-                height: MediaQuery.of(context).size.height / 1.6,
+                height: MediaQuery.of(context).size.height / 1.8,
                 width: MediaQuery.of(context).size.width / 1.1,
                 child: GridView.count(
                   childAspectRatio: (2.5),
@@ -486,7 +486,7 @@ class _GpaState extends State<Gpa> {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: MediaQuery.of(context).size.height * .05),
               Container(
                   decoration: BoxDecoration(
                       // color: Colors.lightGreenAccent,
@@ -500,7 +500,7 @@ class _GpaState extends State<Gpa> {
                     children: [
                       Expanded(
                           child: Container(
-                        height: 50,
+                        height: MediaQuery.of(context).size.height / 13,
                         decoration: BoxDecoration(
                             // color: Colors.white9,
                             border: Border.all(width: .1),

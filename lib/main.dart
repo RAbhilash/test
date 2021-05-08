@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:app/home_screen.dart';
 import 'package:flutter/services.dart';
 import 'home_screen.dart';
-import 'package:flutter/services.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() => runApp(MyApp());
@@ -24,7 +23,7 @@ class Splash extends StatelessWidget {
     return SplashScreen(
       seconds: 1,
       navigateAfterSeconds: HomeScreen(),
-      image: Image.asset("assets/images/splash1.jpg"),
+      image: Image.asset("assets/images/logo.png"),
       photoSize: MediaQuery.of(context).size.width * .3,
       backgroundColor: Colors.red[300],
       loaderColor: Colors.white,
