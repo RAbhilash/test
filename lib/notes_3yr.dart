@@ -24,15 +24,19 @@ class yearthree extends StatefulWidget {
     data1.add(detail(
         "Computer Networks",
         "https://freecomputerbooks.com/covers/An-Introduction-to-Computer-Networks-by-Peter-Dordal.jpg",
-        "https://drive.google.com/file/d/1oCpXZdYhUNSvkFsiEsi0NReaFLUR5vAS/view?usp=sharing"));
+        "https://drive.google.com/drive/folders/1VEGOAAOuFQ6OF9H3KZqgfo2au08weZYu?usp=sharing"));
     data1.add(detail(
         "Discrete Maths",
         "https://images-na.ssl-images-amazon.com/images/I/51ETw0AOvcL._SX325_BO1,204,203,200_.jpg",
-        "https://drive.google.com/file/d/17JYT3KlnUv6O3kch3iSGlbt2YYqZ2MfZ/view?usp=sharing"));
+        "https://drive.google.com/drive/folders/1nXGxuQouw12seHUblKl8GIt1sbZtsueD?usp=sharing"));
     data1.add(detail(
         "Information Storage Management",
         "https://images-eu.ssl-images-amazon.com/images/I/51wOx9poaYL._SX342_SY445_QL70_ML2_.jpg",
         "https://drive.google.com/file/d/1auGI4YkpXsVTmidOTW8GN7jK42dBqeds/view?usp=sharing"));
+    data1.add(detail(
+        "Computational Logic",
+        "https://images-eu.ssl-images-amazon.com/images/I/51wOx9poaYL._SX342_SY445_QL70_ML2_.jpg",
+        "https://drive.google.com/drive/folders/1VjQtd827Zsng77pP1UVffOQEdpouUkpL?usp=sharing"));
     data1.add(detail(
         "Data Mining",
         "https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780123814791.jpg",
@@ -41,6 +45,14 @@ class yearthree extends StatefulWidget {
         "Automata(TOC)",
         "https://olcovers2.blob.core.windows.net/coverswp/2014/09/Introduction-to-Theory-of-Computation-OpenLibra.gif",
         "https://drive.google.com/file/d/1UihPtixVwoQ9gdnuf2FlGfI7cD4041LI/view?usp=sharing"));
+    data1.add(detail(
+        "Arduino",
+        "https://olcovers2.blob.core.windows.net/coverswp/2014/09/Introduction-to-Theory-of-Computation-OpenLibra.gif",
+        "https://drive.google.com/drive/folders/1gClUFkBSHoVWVKeOt5wqmvpr_DxDt6n3?usp=sharing"));
+    data1.add(detail(
+        "Neurofuzzy",
+        "https://olcovers2.blob.core.windows.net/coverswp/2014/09/Introduction-to-Theory-of-Computation-OpenLibra.gif",
+        "https://drive.google.com/drive/folders/1XxQWHtp_JCr658NPoia-c469SDNiUqlm?usp=sharing"));
     data2.add(detail(
         "AI",
         "https://images-na.ssl-images-amazon.com/images/I/41D0z6Sks6L._SX308_BO1,204,203,200_.jpg",
@@ -116,7 +128,7 @@ Widget item(
   final wp = Screen(context).wp; //specify wp
   final hp = Screen(context).hp;
   return Padding(
-    padding: const EdgeInsets.all(16.0),
+    padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
     child: Container(
       child: FittedBox(
         child: Material(
@@ -130,7 +142,7 @@ Widget item(
               children: <Widget>[
                 Container(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
+                    padding: const EdgeInsets.only(left: 10.0),
                     child: tab(
                       context,
                       subject,
@@ -141,7 +153,7 @@ Widget item(
                   ),
                 ),
                 Container(
-                  height: hp(13.5),
+                  height: hp(17),
                   width: wp(22),
                   child: CachedNetworkImage(
                     placeholder: (context, asset) =>
@@ -163,11 +175,11 @@ Widget item(
 
 Widget tab(BuildContext context, String s, String url, var wp, var hp) {
   return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.fromLTRB(8, 0, 10, 8),
+        padding: EdgeInsets.all(8),
         child: Container(
           height: hp(4),
           width: wp(60),
@@ -185,9 +197,6 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
         child: FittedBox(
           fit: BoxFit.scaleDown,
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.purple,
-            ),
             child: Row(
               children: <Widget>[
                 Icon(
@@ -196,9 +205,9 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
                 ),
                 Container(
                   width: wp(2),
-                  height: hp(5),
+                  height: hp(4),
                 ),
-                Text('View', style: TextStyle(fontSize: hp(2.5)))
+                Text('View', style: TextStyle(fontSize: hp(2)))
               ],
             ),
             onPressed: () {

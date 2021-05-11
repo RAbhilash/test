@@ -106,7 +106,7 @@ Widget item(
   final wp = Screen(context).wp; //specify wp
   final hp = Screen(context).hp;
   return Padding(
-    padding: const EdgeInsets.all(16.0),
+    padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
     child: Container(
       child: FittedBox(
         child: Material(
@@ -120,7 +120,7 @@ Widget item(
               children: <Widget>[
                 Container(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
+                    padding: const EdgeInsets.only(left: 10.0),
                     child: tab(
                       context,
                       subject,
@@ -131,7 +131,7 @@ Widget item(
                   ),
                 ),
                 Container(
-                  height: hp(13.5),
+                  height: hp(17),
                   width: wp(22),
                   child: CachedNetworkImage(
                     placeholder: (context, asset) =>
@@ -153,11 +153,11 @@ Widget item(
 
 Widget tab(BuildContext context, String s, String url, var wp, var hp) {
   return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.fromLTRB(8, 0, 10, 8),
+        padding: EdgeInsets.all(8),
         child: Container(
           height: hp(4),
           width: wp(60),
@@ -175,9 +175,6 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
         child: FittedBox(
           fit: BoxFit.scaleDown,
           child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.orange,
-            ),
             child: Row(
               children: <Widget>[
                 Icon(
@@ -186,9 +183,9 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
                 ),
                 Container(
                   width: wp(2),
-                  height: hp(5),
+                  height: hp(4),
                 ),
-                Text('View', style: TextStyle(fontSize: hp(2.5)))
+                Text('View', style: TextStyle(fontSize: hp(2)))
               ],
             ),
             onPressed: () {

@@ -24,17 +24,17 @@ class yearone extends StatefulWidget {
     data1.add(detail(
         "Calculus and Linear Algebra",
         "https://m.media-amazon.com/images/I/31ymIAQWgjL.jpg",
-        "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
+        "https://drive.google.com/drive/folders/1xsnTJfwc-1uMSN87AGT9tyj5GJU1P-t-?usp=sharing"));
     data1.add(detail("BEEE", "http://techbooksyard.com/doc-images/3635.png",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "https://drive.google.com/drive/folders/1o0QvAoBebBCuFLMUJC8rZj17rvXWLH6U?usp=sharing"));
     data1.add(detail(
         "English",
         "https://images-na.ssl-images-amazon.com/images/I/81N6Go0iECL.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "https://drive.google.com/drive/folders/1xsnTJfwc-1uMSN87AGT9tyj5GJU1P-t-?usp=sharing"));
     data1.add(detail(
         "Semiconductor Physics",
         "https://easyengineering.net/wp-content/uploads/2018/01/51ZRIOtS8JL.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "https://drive.google.com/drive/folders/1uPhS5uXB9KcC2mYdmvDtb7ZGbdz5LR0B?usp=sharing"));
     data2.add(detail(
         "German",
         "https://images-na.ssl-images-amazon.com/images/I/41mSscTbjEL._SX331_BO1,204,203,200_.jpg",
@@ -113,7 +113,7 @@ Widget item(
   final wp = Screen(context).wp; //specify wp
   final hp = Screen(context).hp;
   return Padding(
-    padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
+    padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
     child: Container(
       child: FittedBox(
         child: Material(
@@ -127,7 +127,7 @@ Widget item(
               children: <Widget>[
                 Container(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
+                    padding: const EdgeInsets.only(left: 10.0),
                     child: tab(
                       context,
                       subject,
@@ -138,7 +138,7 @@ Widget item(
                   ),
                 ),
                 Container(
-                  height: hp(13.5),
+                  height: hp(17),
                   width: wp(22),
                   child: CachedNetworkImage(
                     placeholder: (context, asset) =>
@@ -164,7 +164,7 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(8),
         child: Container(
           height: hp(4),
           width: wp(60),
