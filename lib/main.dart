@@ -4,7 +4,9 @@ import 'package:flutter/services.dart';
 import 'home_screen.dart';
 import 'package:splashscreen/splashscreen.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

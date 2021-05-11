@@ -22,45 +22,49 @@ class yeartwo extends StatefulWidget {
   List<detail> data1 = [], data2 = [];
   yeartwo() {
     data1.add(detail(
-        "Calculus and Linear Algebra",
-        "https://drive.google.com/uc?export=download&id=1zFDvQefGst9fsr4FuKqylfYFLPo5to7k",
-        "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
+        "Analog and Digital Electronics",
+        "https://easyengineering.net/wp-content/uploads/2018/03/analog-and-digital-electronics-by-u-a-bakshi-1-638.jpg",
+        "https://drive.google.com/file/d/1OX_1y3xmlUMm_mbvnkpR1NrJaiUI0lRi/view?usp=sharing"));
     data1.add(detail(
-        "BEEE",
-        "https://drive.google.com/uc?export=download&id=176_ML804bPmkbqtGvo9dPbJWqyl-qhdW",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "Biology",
+        "https://thumbs.dreamstime.com/z/cover-school-notebook-biology-textbook-pattern-black-white-chalk-style-hand-drawn-icon-dna-flower-blank-187836741.jpg",
+        "https://drive.google.com/file/d/1zfZsuTDXg0H9thU40WEShDikQYY245uA/view?usp=sharing"));
     data1.add(detail(
-        "English",
-        "https://drive.google.com/uc?export=download&id=1PLc0MlSAT-NQGapJnOxiCekb4dYboqL1",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "Computer Organization and Architecure",
+        "assets/images/Coa.jpg",
+        "https://drive.google.com/file/d/1b9Jc6JQs7qjb9N56l-l24R74oM1UPT5_/view?usp=sharing"));
+    data1.add(detail("Data Structure Using Python", "assets/images/ds.jpg",
+        "https://drive.google.com/file/d/1dy0Ulogl8JPCOXweaNPBDhd1rkC9exoS/view?usp=sharing"));
     data1.add(detail(
-        "Semiconductor Physics",
-        "https://drive.google.com/uc?export=download&id=1iYHiQT8E2Iwufpr4fQPexnMvfFklptWh",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "OOPS",
+        "https://images-na.ssl-images-amazon.com/images/I/51HX2eyisQL._SX406_BO1,204,203,200_.jpg",
+        "https://drive.google.com/file/d/1dp95bUrxihP2Rlah76l5FUyCsLZubWsw/view?usp=sharing"));
+    data1.add(detail(
+        "Transform and Boundary Value Problems",
+        "https://images.routledge.com/common/jackets/crclarge/978158488/9781584883142.jpg",
+        "https://drive.google.com/file/d/1O1z-lHVq3vimLT27WvMypfmHJ0DkIs05/view?usp=sharing"));
+    // data2.add(detail("Fibre Optics And Opto-Electronics", "assets/images/2.png",
+    // "https://drive.google.com/file/d/1aNOKMt4uJgwzU6f3FHpGH1oiI-bupnOI/view?usp=sharing"));
     data2.add(detail(
-        "French/German",
-        "https://drive.google.com/uc?export=download&id=1oPXBYuh9QoWEh0X35Cne0Zhnm0tfvFL9",
-        "https://drive.google.com/drive/folders/1bN36XrhWWENw3bbWxUtP2GBw2QQVSyJg?usp=sharing"));
+        "DAA",
+        "https://images-na.ssl-images-amazon.com/images/I/41VndKVtiXL._SX258_BO1,204,203,200_.jpg",
+        "https://drive.google.com/file/d/1YYoBJhx9YNM4TUmFRvahCC-0PfLicGf8/view?usp=sharing"));
     data2.add(detail(
-        "General Aptitude",
-        "https://drive.google.com/uc?export=download&id=1eurf4soQgAEKFe7qrpQtkuyHR0DaKMNn",
-        "https://drive.google.com/drive/folders/1Wf9tB0xsyl5oOTIk8dMk5c_IrnCKJSbG?usp=sharing"));
+        "Computer Communication",
+        "https://images-na.ssl-images-amazon.com/images/I/51H6T7XFYML._SX376_BO1,204,203,200_.jpg",
+        "https://drive.google.com/file/d/1BiJM-GJwarEtFnyjR__QsjH7DEl7z5p2/view?usp=sharing"));
     data2.add(detail(
-        "Advanced Calculus and Complex Analysis",
-        "https://drive.google.com/uc?export=download&id=1sPW4UK_8NC3NYT6R0N8-RBzGwM-YZMr0",
-        "https://drive.google.com/drive/folders/1gxWNWx9AzHV2w6EyhhMFd4Pgx112-sw0?usp=sharing"));
+        "Operating System",
+        "https://i2.wp.com/edutechlearners.com/wp-content/uploads/2016/03/Operating-System-Concepts-b.jpg?resize=205%2C290&ssl=1",
+        "https://drive.google.com/file/d/1D3DBHrmRefOzfWJtpmYS2-04xfMpze0y/view?usp=sharing"));
     data2.add(detail(
-        "Chemistry",
-        "https://drive.google.com/uc?export=download&id=1MX16fbSkXag4j15b5nNUj-MKl9eBKFP7",
-        "https://drive.google.com/drive/folders/1EX1hnnaQUb3K8EY5B3HU73Z337oiIwc0?usp=sharing"));
+        "Software Project Management System",
+        "https://images-na.ssl-images-amazon.com/images/I/41ycgJnZ73L.jpg",
+        "https://drive.google.com/file/d/1IXDiLgjJFyOVBDuzC1Xj43Z9Mms4KcXI/view?usp=sharing"));
     data2.add(detail(
-        "PPS",
-        "https://drive.google.com/uc?export=download&id=1MX16fbSkXag4j15b5nNUj-MKl9eBKFP7",
-        "https://drive.google.com/drive/folders/143wpq1wIJXlFgC4QieRPd99ObBoPoKYa?usp=sharing"));
-    data2.add(detail(
-        "Civil and Mechanical Engineering Workshop",
-        "https://drive.google.com/uc?export=download&id=1P4HM54YMxh7Q3_pMdZhFjUZv9ENl0KdX",
-        "https://drive.google.com/drive/folders/1dAcgSz7omfWkAaaU8ElFwxzEMBM8YpDl?usp=sharing"));
+        "Probabilty Statistics",
+        "https://www.mheducation.co.in/media/catalog/product/cache/84c63a40cf0771f03c9446b22a7e0f08/9/7/9780070669253_21.jpeg",
+        "https://drive.google.com/file/d/1Wq4pQopquEgp3su9CY7whT1f5Yzq4HuF/view?usp=sharing"));
     Comparator<detail> comp = (a, b) => a.subject.compareTo(b.subject);
     data1.sort(comp);
     data2.sort(comp);

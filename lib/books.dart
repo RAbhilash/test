@@ -32,7 +32,7 @@ class _BooksState extends State<Books> {
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-              child: Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Flexible(
@@ -54,23 +54,25 @@ class _BooksState extends State<Books> {
               ),
             ),
             Container(
-              height:hp(6),
-              width: wp(100),
-              child:Align(
-                alignment: Alignment.topCenter,
-                              child: Text('Select Year',style: TextStyle(
-                  fontSize:hp(5),
-                  
-                  // fontWeight:FontWeight.bold,
-                ),),
-              )
-            ),
+                height: hp(6),
+                width: wp(100),
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Text(
+                    'Select Year',
+                    style: TextStyle(
+                      fontSize: hp(5),
+
+                      // fontWeight:FontWeight.bold,
+                    ),
+                  ),
+                )),
             SizedBox(
-              height:hp(1),
+              height: hp(1),
             ),
             Container(
-              height:hp(65),
-              width:wp(100),
+              height: hp(65),
+              width: wp(100),
               child: Ink(
                 color: Colors.white,
                 child: Center(
@@ -78,9 +80,9 @@ class _BooksState extends State<Books> {
                     shrinkWrap: true,
                     padding: EdgeInsets.fromLTRB(20, 20, 15, 15),
                     crossAxisCount: MediaQuery.of(context).orientation ==
-                                  Orientation.portrait
-                              ? 2
-                              : 4,
+                            Orientation.portrait
+                        ? 2
+                        : 4,
                     mainAxisSpacing: 40,
                     crossAxisSpacing: 20,
                     primary: false,

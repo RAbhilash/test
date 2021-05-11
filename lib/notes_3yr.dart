@@ -21,13 +21,29 @@ class yearthree extends StatefulWidget {
   @override
   List<detail> data1 = [], data2 = [];
   yearthree() {
-    data1.add(detail("Automata", "assets/images/thumbnail.jpg",
-        "https://drive.google.com/drive/folders/10n7qFW0SYVZng8ww-f2Rb-kFnA62QzU0?usp=sharing"));
-    data1.add(detail("Electrical", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
-    data1.add(detail("English", "assets/images/thumbnail.jpg",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
-    data2.add(detail("AI", "assets/images/thumbnail.jpg",
+    data1.add(detail(
+        "Computer Networks",
+        "https://freecomputerbooks.com/covers/An-Introduction-to-Computer-Networks-by-Peter-Dordal.jpg",
+        "https://drive.google.com/file/d/1oCpXZdYhUNSvkFsiEsi0NReaFLUR5vAS/view?usp=sharing"));
+    data1.add(detail(
+        "Discrete Maths",
+        "https://images-na.ssl-images-amazon.com/images/I/51ETw0AOvcL._SX325_BO1,204,203,200_.jpg",
+        "https://drive.google.com/file/d/17JYT3KlnUv6O3kch3iSGlbt2YYqZ2MfZ/view?usp=sharing"));
+    data1.add(detail(
+        "Information Storage Management",
+        "https://images-eu.ssl-images-amazon.com/images/I/51wOx9poaYL._SX342_SY445_QL70_ML2_.jpg",
+        "https://drive.google.com/file/d/1auGI4YkpXsVTmidOTW8GN7jK42dBqeds/view?usp=sharing"));
+    data1.add(detail(
+        "Data Mining",
+        "https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780123814791.jpg",
+        "https://drive.google.com/file/d/1pj6k18O208s0ZOHm3s43wI5Hk7B4DchJ/view?usp=sharing"));
+    data1.add(detail(
+        "Automata(TOC)",
+        "https://olcovers2.blob.core.windows.net/coverswp/2014/09/Introduction-to-Theory-of-Computation-OpenLibra.gif",
+        "https://drive.google.com/file/d/1UihPtixVwoQ9gdnuf2FlGfI7cD4041LI/view?usp=sharing"));
+    data2.add(detail(
+        "AI",
+        "https://images-na.ssl-images-amazon.com/images/I/41D0z6Sks6L._SX308_BO1,204,203,200_.jpg",
         "https://drive.google.com/drive/folders/1bN36XrhWWENw3bbWxUtP2GBw2QQVSyJg?usp=sharing"));
     data2.add(detail("Aptitude", "assets/images/thumbnail.jpg",
         "https://drive.google.com/drive/folders/1Wf9tB0xsyl5oOTIk8dMk5c_IrnCKJSbG?usp=sharing"));
@@ -39,9 +55,11 @@ class yearthree extends StatefulWidget {
         "https://drive.google.com/drive/folders/1EX1hnnaQUb3K8EY5B3HU73Z337oiIwc0?usp=sharing"));
     data2.add(detail(
         "Network Routing Algorithms",
-        "assets/images/thumbnail.jpg",
+        "https://m.media-amazon.com/images/I/51sHHed6NZL._SX260_.jpg",
         "https://drive.google.com/drive/folders/143wpq1wIJXlFgC4QieRPd99ObBoPoKYa?usp=sharing"));
-    data2.add(detail("Network Security", "assets/images/thumbnail.jpg",
+    data2.add(detail(
+        "Network Security",
+        "https://images-na.ssl-images-amazon.com/images/I/51Qj+opsPUL._SX258_BO1,204,203,200_.jpg",
         "https://drive.google.com/drive/folders/1dAcgSz7omfWkAaaU8ElFwxzEMBM8YpDl?usp=sharing"));
     Comparator<detail> comp = (a, b) => a.subject.compareTo(b.subject);
     data1.sort(comp);

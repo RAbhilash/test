@@ -21,22 +21,12 @@ class yearfour extends StatefulWidget {
   @override
   List<detail> data1 = [], data2 = [];
   yearfour() {
+    data1.add(detail("IOT", "assets/images/iot.jpg",
+        "https://drive.google.com/file/d/15IHz2ymShvUle2so2ZG_8Z3_0KUqz_dM/view?usp=sharing"));
     data1.add(detail(
-        "Calculus and Linear Algebra",
-        "https://drive.google.com/uc?export=download&id=1zFDvQefGst9fsr4FuKqylfYFLPo5to7k",
-        "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
-    data1.add(detail(
-        "BEEE",
-        "https://drive.google.com/uc?export=download&id=176_ML804bPmkbqtGvo9dPbJWqyl-qhdW",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
-    data1.add(detail(
-        "English",
-        "https://drive.google.com/uc?export=download&id=1PLc0MlSAT-NQGapJnOxiCekb4dYboqL1",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
-    data1.add(detail(
-        "Semiconductor Physics",
-        "https://drive.google.com/uc?export=download&id=1iYHiQT8E2Iwufpr4fQPexnMvfFklptWh",
-        "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
+        "Web Programming",
+        "https://images-na.ssl-images-amazon.com/images/I/51uPb7Ca1PL._SX258_BO1,204,203,200_.jpg",
+        "https://drive.google.com/file/d/14RybgVY-iHZA5g3ePcrEJYSCtbHC3ETT/view?usp=sharing"));
     data2.add(detail(
         "French/German",
         "https://drive.google.com/uc?export=download&id=1oPXBYuh9QoWEh0X35Cne0Zhnm0tfvFL9",

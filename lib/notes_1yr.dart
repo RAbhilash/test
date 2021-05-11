@@ -23,44 +23,42 @@ class yearone extends StatefulWidget {
   yearone() {
     data1.add(detail(
         "Calculus and Linear Algebra",
-        "https://drive.google.com/uc?export=download&id=1zFDvQefGst9fsr4FuKqylfYFLPo5to7k",
+        "https://m.media-amazon.com/images/I/31ymIAQWgjL.jpg",
         "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
-    data1.add(detail(
-        "BEEE",
-        "https://drive.google.com/uc?export=download&id=176_ML804bPmkbqtGvo9dPbJWqyl-qhdW",
+    data1.add(detail("BEEE", "http://techbooksyard.com/doc-images/3635.png",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail(
         "English",
-        "https://drive.google.com/uc?export=download&id=1PLc0MlSAT-NQGapJnOxiCekb4dYboqL1",
+        "https://images-na.ssl-images-amazon.com/images/I/81N6Go0iECL.jpg",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data1.add(detail(
         "Semiconductor Physics",
-        "https://drive.google.com/uc?export=download&id=1iYHiQT8E2Iwufpr4fQPexnMvfFklptWh",
+        "https://easyengineering.net/wp-content/uploads/2018/01/51ZRIOtS8JL.jpg",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
     data2.add(detail(
-        "French/German",
-        "https://drive.google.com/uc?export=download&id=1oPXBYuh9QoWEh0X35Cne0Zhnm0tfvFL9",
-        "https://drive.google.com/drive/folders/1bN36XrhWWENw3bbWxUtP2GBw2QQVSyJg?usp=sharing"));
+        "German",
+        "https://images-na.ssl-images-amazon.com/images/I/41mSscTbjEL._SX331_BO1,204,203,200_.jpg",
+        "https://drive.google.com/file/d/1QIPc6uLVBZDIsBLxeBXxkQeA7RMl2bBt/view?usp=sharing"));
+    data2.add(detail(
+        "French",
+        "https://ia800900.us.archive.org/BookReader/BookReaderImages.php?zip=/16/items/afrenchgrammarb00breygoog/afrenchgrammarb00breygoog_tif.zip&file=afrenchgrammarb00breygoog_tif/afrenchgrammarb00breygoog_0008.tif&id=afrenchgrammarb00breygoog&scale=8&rotate=0",
+        "https://drive.google.com/file/d/1eKqSwGksILWFL-2RoYFyGNsIutvdrDjw/view?usp=sharing"));
     data2.add(detail(
         "General Aptitude",
-        "https://drive.google.com/uc?export=download&id=1eurf4soQgAEKFe7qrpQtkuyHR0DaKMNn",
+        "https://1.bp.blogspot.com/-WXZQfSe4lLw/XTg0rDQMRWI/AAAAAAAACcA/nunjcYkdTDwd2PURITT-LT-3lAEd75rogCLcBGAs/s1600/quantitative%2Baptitude%2B%25281%2529.png",
         "https://drive.google.com/drive/folders/1Wf9tB0xsyl5oOTIk8dMk5c_IrnCKJSbG?usp=sharing"));
     data2.add(detail(
         "Advanced Calculus and Complex Analysis",
-        "https://drive.google.com/uc?export=download&id=1sPW4UK_8NC3NYT6R0N8-RBzGwM-YZMr0",
+        "https://images-eu.ssl-images-amazon.com/images/I/41JxHeBcBJL._SX342_SY445_QL70_ML2_.jpg",
         "https://drive.google.com/drive/folders/1gxWNWx9AzHV2w6EyhhMFd4Pgx112-sw0?usp=sharing"));
     data2.add(detail(
         "Chemistry",
-        "https://drive.google.com/uc?export=download&id=1MX16fbSkXag4j15b5nNUj-MKl9eBKFP7",
+        "https://chemistry.com.pk/wp-content/uploads/2014/08/Essential-Chemistry.jpg",
         "https://drive.google.com/drive/folders/1EX1hnnaQUb3K8EY5B3HU73Z337oiIwc0?usp=sharing"));
     data2.add(detail(
         "PPS",
-        "https://drive.google.com/uc?export=download&id=1MX16fbSkXag4j15b5nNUj-MKl9eBKFP7",
+        "https://images-na.ssl-images-amazon.com/images/I/61Aa6VMDBhL.jpg",
         "https://drive.google.com/drive/folders/143wpq1wIJXlFgC4QieRPd99ObBoPoKYa?usp=sharing"));
-    data2.add(detail(
-        "Civil and Mechanical Engineering Workshop",
-        "https://drive.google.com/uc?export=download&id=1P4HM54YMxh7Q3_pMdZhFjUZv9ENl0KdX",
-        "https://drive.google.com/drive/folders/1dAcgSz7omfWkAaaU8ElFwxzEMBM8YpDl?usp=sharing"));
     Comparator<detail> comp = (a, b) => a.subject.compareTo(b.subject);
     data1.sort(comp);
     data2.sort(comp);
@@ -162,11 +160,11 @@ Widget item(
 
 Widget tab(BuildContext context, String s, String url, var wp, var hp) {
   return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Padding(
-        padding: EdgeInsets.fromLTRB(8, 0, 10, 8),
+        padding: EdgeInsets.all(16),
         child: Container(
           height: hp(4),
           width: wp(60),
@@ -185,7 +183,6 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
           fit: BoxFit.scaleDown,
           child: ElevatedButton(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(
                   MyFlutterApp.drive,
@@ -193,7 +190,7 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
                 ),
                 Container(
                   width: wp(2),
-                  height: hp(5),
+                  height: hp(4),
                 ),
                 Text('View', style: TextStyle(fontSize: hp(2)))
               ],
