@@ -38,7 +38,7 @@ class _aboutusState extends State<aboutus> {
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                 child: Container(
-                  color: Colors.black.withOpacity(0.2),
+                  color: Colors.white24,
                 ),
               )),
           Column(children: [
@@ -65,7 +65,7 @@ class _aboutusState extends State<aboutus> {
                               border: Border.all(color: Colors.white),
                               shape: BoxShape.circle,
                               color: Colors.white)),
-                      Text("Aditya Pratap Singh",
+                      Text("Aditya.P.S",
                           style: TextStyle(
                               fontFamily: 'MyFlutterApp1',
                               fontSize: hp(3),

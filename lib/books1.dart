@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:app/fontlib/my_flutter_app_icons.dart';
 // import 'package:auto_size_text/auto_size_text.dart';
 import 'package:responsive_screen/responsive_screen.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class detail {
   String subject, asset, subtext;
@@ -65,7 +66,7 @@ class _booksyearoneState extends State<booksyearone>
     // "https://drive.google.com/file/d/1aNOKMt4uJgwzU6f3FHpGH1oiI-bupnOI/view?usp=sharing"));
     data1.add(detail(
         "Basic Electrical",
-        "http://techbooksyard.com/doc-images/3635.png",
+        "assets/images/3635.png",
         "https://drive.google.com/file/d/1L0hOTTRr5w0C1-898tY2nsDhLd-Twfg5/view?usp=sharing"));
     data1.add(detail(
         "Engineering Graphics",
@@ -280,10 +281,16 @@ class _booksyearoneState extends State<booksyearone>
                           border: Border.all(color: Colors.black)),
                       height: hp(20),
                       width: wp(30),
-                      child: Image.network(
-                        asset,
-                        fit: BoxFit.fill,
-                      ),
+                      child: CachedNetworkImage(
+                    placeholder: (context, asset) =>
+                        Image.asset('assets/images/loading.gif'),
+                    fit: BoxFit.fill,
+                    alignment: Alignment.centerRight,
+                    imageUrl: asset,
+                    fadeInDuration: Duration(milliseconds: 500),
+                    placeholderFadeInDuration: Duration(milliseconds: 1000),
+                    errorWidget: (context, url, error) => Icon(Icons.error),
+                  ),
                     ),
                   ],
                 )),
@@ -319,7 +326,7 @@ class _booksyearoneState extends State<booksyearone>
                       // width: 190,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white)),
-                      height: hp(15),
+                      height: hp(20),
                       width: wp(30),
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
@@ -342,66 +349,63 @@ class _booksyearoneState extends State<booksyearone>
   }
 
   Widget tab(BuildContext context, String s, String url, var wp, var hp) {
-    var size = MediaQuery.of(context).size;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.fromLTRB(5, 2, 5, 5),
-          child: Container(
-            height: hp(5),
-            width: wp(74),
-            child: Container(
-              child: Expanded(
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    s,
-                    softWrap: false,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontSize: hp(4),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+  var size = MediaQuery.of(context).size;
+  return Column(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: <Widget>[
+    Padding(
+      padding: const EdgeInsets.fromLTRB(5,2,5,5),
+      child: Container(
+    height: hp(5),
+    width: wp(74),
+    child: Align(
+      alignment: Alignment.topLeft,
+                    child: Text(
+    s,
+    softWrap: true,
+    overflow: TextOverflow.fade,
+    maxLines: 1,
+    textAlign: TextAlign.left,
+    style: TextStyle(
+      fontSize: hp(3),
+      fontWeight: FontWeight.bold,
+    ),
+      ),
+    ),
+      ),
+    ),
+    Container(
+    
+    height: hp(5),
+    width: wp(30),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(25),
+      // color:Color.fromARGB(255, 27, 28, 30),
+      boxShadow: [BoxShadow(
+        color:Color.fromARGB(130, 237, 125, 50),
+        blurRadius: _animation.value,
+        spreadRadius: _animation.value,
+      )]
+    ),
+    child: Padding(
+      padding: EdgeInsets.only(left:0),
+      child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(primary: Colors.orange[600]),
+        label: Text(
+      'View',
         ),
-        Container(
-          height: hp(5),
-          width: wp(30),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),
-              // color:Color.fromARGB(255, 27, 28, 30),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(130, 237, 125, 50),
-                  blurRadius: _animation.value,
-                  spreadRadius: _animation.value,
-                )
-              ]),
-          child: Padding(
-            padding: EdgeInsets.only(left: 0),
-            child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(primary: Colors.orange[600]),
-              label: Text(
-                'View',
-                // style: TextStyle(fontSize:hp(2.5)),
-              ),
-              icon: Icon(
-                MyFlutterApp.drive,
-                size: hp(2.5),
-              ),
-              onPressed: () {
-                _launchurl(url);
-              },
-            ),
+        icon: Icon(
+      MyFlutterApp.drive,
+      size: 15,
           ),
+        onPressed: () {
+      _launchurl(url);
+        },
+      ),
+    ),
         ),
-      ],
+  ],
     );
-  }
+}
 }

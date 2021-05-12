@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:app/fontlib/my_flutter_app_icons.dart';
 // import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 class detail {
   String subject, asset, subtext;
@@ -256,7 +257,17 @@ Widget item(
                       topLeft: Radius.circular(0),
                       bottomLeft: Radius.circular(0),
                     ),
-                    child:Image.network(asset,fit:BoxFit.fill),
+                    // child:Image.network(asset,fit:BoxFit.fill),
+                    child: CachedNetworkImage(
+                    placeholder: (context, asset) =>
+                        Image.asset('assets/images/loading.gif'),
+                    fit: BoxFit.fill,
+                    alignment: Alignment.centerRight,
+                    imageUrl: asset,
+                    fadeInDuration: Duration(milliseconds: 500),
+                    placeholderFadeInDuration: Duration(milliseconds: 1000),
+                    errorWidget: (context, url, error) => Icon(Icons.error),
+                  ),
                   ),
                 ),
               ],
@@ -336,7 +347,8 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
     maxLines: 2,
     textAlign: TextAlign.left,
     style: TextStyle(
-      fontSize: hp(4),
+     fontSize: hp(3),
+      fontWeight: FontWeight.bold,
     ),
       ),
     ),

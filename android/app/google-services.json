@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "488610759012",
+    "project_id": "srm-mate",
+    "storage_bucket": "srm-mate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488610759012:android:8e9d35c8e29a6f17b13a71",
+        "android_client_info": {
+          "package_name": "com.SRM_Mate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488610759012-428oahohuobui134815nf4krct8uejd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdFcr4Xtso9VnrujltzcQ0mWqvs5JzeE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488610759012-428oahohuobui134815nf4krct8uejd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.app
+package com.SRM_Mate
 
 import io.flutter.embedding.android.FlutterActivity
 
