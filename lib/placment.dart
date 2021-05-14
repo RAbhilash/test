@@ -161,7 +161,6 @@ class placement extends StatelessWidget {
 
 Widget item(BuildContext context, int index, String subject, String url,
     IconData asset, String subtext, String domain) {
-  var col;
   return Card(
     margin: EdgeInsets.all(16),
     elevation: 10,

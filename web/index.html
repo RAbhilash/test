@@ -29,7 +29,7 @@
   <title>app</title>
   <link rel="manifest" href="manifest.json">
 </head>
-<body>
+<body> 
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -39,6 +39,22 @@
         navigator.serviceWorker.register('flutter_service_worker.js');
       });
     }
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAkp3cplGI84z8JgiUPayWt24diq17ixig",
+    authDomain: "srm-mate.firebaseapp.com",
+    projectId: "srm-mate",
+    storageBucket: "srm-mate.appspot.com",
+    messagingSenderId: "488610759012",
+    appId: "1:488610759012:web:8b2e4ae5a8d71ce6b13a71",
+    measurementId: "G-L9W7GBB5SL"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>

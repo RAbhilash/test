@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app/GPA.dart';
 import 'package:app/books.dart';
 import 'package:app/course_notes.dart';
@@ -10,7 +9,6 @@ import 'package:responsive_screen/responsive_screen.dart';
 import 'package:hawk_fab_menu/hawk_fab_menu.dart';
 import 'package:app/fontlib/my_flutter_app_icons.dart';
 import 'package:app/aboutus.dart';
-import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:flutter_beautiful_popup/main.dart';
 // import 'package:foldable_sidebar/foldable_sidebar.dart';

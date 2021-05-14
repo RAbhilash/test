@@ -24,15 +24,9 @@ class yearone extends StatefulWidget {
     data1.add(detail(
         "Calculus and Linear Algebra",
         "https://m.media-amazon.com/images/I/31ymIAQWgjL.jpg",
-<<<<<<< HEAD
-        "https://drive.google.com/drive/folders/1xsnTJfwc-1uMSN87AGT9tyj5GJU1P-t-?usp=sharing"));
-    data1.add(detail("BEEE", "http://techbooksyard.com/doc-images/3635.png",
-        "https://drive.google.com/drive/folders/1o0QvAoBebBCuFLMUJC8rZj17rvXWLH6U?usp=sharing"));
-=======
         "https://drive.google.com/drive/folders/1nnquBzmA6l0YGO3OQDXowsq_xQolEu3X?usp=sharing"));
     data1.add(detail("BEEE", "https://techbooksyard.com/doc-images/3635.png",
         "https://stackoverflow.com/questions/53861302/passing-data-between-screens-in-flutter"));
->>>>>>> a7d8426cba387b2305e9439aa05dfbcf206fe873
     data1.add(detail(
         "English",
         "https://images-na.ssl-images-amazon.com/images/I/81N6Go0iECL.jpg",
@@ -189,15 +183,16 @@ Widget tab(BuildContext context, String s, String url, var wp, var hp) {
           fit: BoxFit.scaleDown,
           child: ElevatedButton(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(
                   MyFlutterApp.drive,
                   size: hp(2.5),
                 ),
-                Container(
-                  width: wp(2),
-                  height: hp(4),
-                ),
+                // Container(
+                //   width: wp(2),
+                //   height: hp(4),
+                // ),
                 Text('View', style: TextStyle(fontSize: hp(2)))
               ],
             ),
