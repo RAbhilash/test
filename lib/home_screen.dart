@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:app/GPA.dart';
 import 'package:app/books.dart';
 import 'package:app/course_notes.dart';
@@ -45,6 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
     var size = MediaQuery.of(context).size;
     final wp = Screen(context).wp; //specify wp
     final hp = Screen(context).hp;
+    var diagonal =
+        sqrt(((size.height) * (size.height)) + ((size.width) * (size.width)));
     return Scaffold(
         backgroundColor: Colors.red[300],
         body: Builder(
@@ -52,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // Builder from the tree
             builder: (BuildContext context) => HawkFabMenu(
                   icon: AnimatedIcons.menu_arrow,
-                  fabColor: Colors.red[50],
+                  fabColor: Color.fromRGBO(106, 210, 211, 1.0),
                   iconColor: Colors.black38,
                   items: [
                     HawkFabMenuItem(
@@ -61,12 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             PageRouteBuilder(
-                              transitionDuration: Duration(seconds: 1),
+                              transitionDuration: Duration(milliseconds: 150),
                               transitionsBuilder:
                                   (context, animation, animationTime, child) {
-                                animation = CurvedAnimation(
-                                    parent: animation,
-                                    curve: Curves.elasticInOut);
+                                // animation = CurvedAnimation(
+                                //     //animation
+                                //     parent: animation,
+                                //     curve: Curves.elasticInOut);
                                 return ScaleTransition(
                                   alignment: Alignment.center,
                                   scale: animation,
@@ -88,10 +93,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     HawkFabMenuItem(
                       label: 'ERP',
                       ontap: () {
-                        Scaffold.of(context)..hideCurrentSnackBar();
-                        Scaffold.of(context).showSnackBar(
-                          SnackBar(content: Text('ERP')),
-                        );
+                        // Scaffold.of(context)..hideCurrentSnackBar();
+                        // Scaffold.of(context).showSnackBar(
+                        //   SnackBar(content: Text('ERP')),)
+                        launchurl('https://evarsity.srmist.edu.in/srmsip/');
                       },
                       icon: Icon(Icons.comment),
                       labelColor: Colors.white,
@@ -130,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               // SizedBox(height: 70),
                               Container(
-                                height: size.height * .4,
+                                height: diagonal * .35,
                                 decoration: BoxDecoration(
                                   boxShadow: <BoxShadow>[
                                     BoxShadow(
@@ -148,11 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                           Column(children: [
-                            // SizedBox(height: size.height * .099),
-                            SizedBox(
-                              height: size.height * .087,
-                            ),
-
+                            SizedBox(height: diagonal * .068),
                             Padding(
                               padding: const EdgeInsets.fromLTRB(20, 0, 20, 2),
                               child: ClipPath(
@@ -161,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(30)))),
                                 child: Container(
-                                  height: size.height * .3,
+                                  height: diagonal * .27,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(40),
                                     image: DecorationImage(
@@ -176,9 +177,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       SafeArea(
+                        //icon,
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: 15, right: 15, left: 15, bottom: 3),
+                              top: 15, right: 15, left: 15, bottom: 5),
                           child: Column(
                             children: <Widget>[
                               Container(
@@ -187,11 +189,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                     right: 0,
                                     left: 0,
                                     bottom: size.height * .1),
-                                height: size.height * .2,
+                                height:
+                                    diagonal * .175, //this is the fucking stuff
 
                                 // color: Colors.yellow,
-                                margin:
-                                    EdgeInsets.only(bottom: size.height * .24),
+                                margin: EdgeInsets.only(
+                                    bottom: diagonal *
+                                        .17), //change this argument here
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
@@ -214,15 +218,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 blurRadius: 10)
                                           ],
                                         )),
-                                    //                           child: CircleAvatar(
-                                    //   radius: 32,
-                                    //   backgroundImage: Image.asset(
-                                    //       'assets/images/fang1.png'),
-                                    // ),
-
-                                    // SizedBox(
-                                    //   width: 55,
-                                    // ),
                                     Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -251,8 +246,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               // Container(
                               //   height: size.height * .05, // to make this responsive
                               // ),
+
                               Container(
-                                height: hp(50),
+                                height: hp(55),
                                 //  height: 300,
                                 child: Column(
                                   children: <Widget>[
@@ -311,10 +307,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                               elevation: 10,
                                               child: Column(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment.start,
+                                                    MainAxisAlignment.center,
                                                 children: <Widget>[
                                                   Expanded(
-                                                    flex: 2,
+                                                    flex: 5,
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
@@ -327,10 +323,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                   ),
                                                   Expanded(
+                                                    flex: 2,
                                                     child: Text(
                                                       'Placement Material',
                                                       style: TextStyle(
-                                                          // fontSize: 18,
+                                                          fontSize: hp(2.05),
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           fontFamily:
@@ -347,7 +344,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   context,
                                                   PageRouteBuilder(
                                                     transitionDuration:
-                                                        Duration(seconds: 1),
+                                                        Duration(
+                                                            milliseconds: 1000),
                                                     transitionsBuilder:
                                                         (context,
                                                             animation,
@@ -392,25 +390,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       MainAxisAlignment.center,
                                                   children: <Widget>[
                                                     Expanded(
+                                                      flex: 5,
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsets
                                                                 .all(8.0),
                                                         child: Image.asset(
                                                           'assets/images/books.png', //add img here
-                                                          // height: size.height*.4
                                                         ),
                                                       ),
                                                     ),
                                                     //SizedBox(height: 10),
                                                     // SizedBox(height: 20),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                              8.0),
+                                                    Expanded(
+                                                      flex: 2,
                                                       child: Text('Books',
                                                           style: TextStyle(
-                                                              // fontSize: 20,
+                                                              fontSize: hp(2.4),
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold,
@@ -427,9 +423,33 @@ class _HomeScreenState extends State<HomeScreen> {
                                             onTap: () {
                                               Navigator.push(
                                                   context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          Gpa()));
+                                                  PageRouteBuilder(
+                                                    transitionDuration:
+                                                        Duration(
+                                                            milliseconds: 1000),
+                                                    transitionsBuilder:
+                                                        (context,
+                                                            animation,
+                                                            animationTime,
+                                                            child) {
+                                                      animation =
+                                                          CurvedAnimation(
+                                                              parent: animation,
+                                                              curve: Curves
+                                                                  .elasticInOut);
+                                                      return ScaleTransition(
+                                                        alignment:
+                                                            Alignment.center,
+                                                        scale: animation,
+                                                        child: child,
+                                                      );
+                                                    },
+                                                    pageBuilder: (context,
+                                                        animation,
+                                                        animationTime) {
+                                                      return Gpa();
+                                                    },
+                                                  ));
                                             },
                                             child: Card(
                                               shape: RoundedRectangleBorder(
@@ -442,7 +462,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     MainAxisAlignment.center,
                                                 children: <Widget>[
                                                   Expanded(
-                                                    flex: 2,
+                                                    flex: 5,
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
@@ -453,13 +473,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                   ),
                                                   Expanded(
-                                                    flex: 1,
+                                                    flex: 2,
                                                     child: Text(
                                                         'GPA Calculator',
                                                         style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.bold,
-                                                            // fontSize: 20,
+                                                            fontSize: hp(2.4),
                                                             fontFamily:
                                                                 'cardTextStyle')),
                                                   )
@@ -511,7 +531,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     MainAxisAlignment.center,
                                                 children: <Widget>[
                                                   Expanded(
-                                                    flex: 2,
+                                                    flex: 5,
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
@@ -523,9 +543,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     ),
                                                   ),
                                                   Expanded(
+                                                    flex: 2,
                                                     child: Text('Course Notes',
                                                         style: TextStyle(
-                                                            // fontSize: 20,
+                                                            fontSize: hp(2.3),
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontFamily:
@@ -541,41 +562,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                               ),
-
-                              // Row(
-                              //   children: <Widget>[
-                              //     Expanded(
-                              //       child: Container(
-                              //         child: Text('ERP'),
-                              //       ),
-                              //     ),
-                              //   ],
-                              // ),
                             ],
                           ),
                         ),
                       ),
-                      // Column(
-                      //   children: [
-                      //     Container(
-                      //       height: size.height * .95,
-                      //     ),
-                      //     Row(
-                      //       children: <Widget>[
-                      //         Expanded(
-                      //           child: Container(
-                      //             child: Text('ERP'),
-                      //           ),
-                      //         ),
-                      //         Expanded(
-                      //           child: Container(
-                      //             child: Text('About us'),
-                      //           ),
-                      //         ),
-                      //       ],
-                      //     )
-                      //   ],
-                      // ),
                     ],
                   ),
                 )));

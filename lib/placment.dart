@@ -116,7 +116,7 @@ class placement extends StatelessWidget {
                         padding: const EdgeInsets.all(15.0),
                         child: Container(
                           child: Image.asset(
-                            "assets/images/fang.png",
+                            "assets/images/fang1.png",
                             fit: BoxFit.fitWidth,
                           ),
                         ),
@@ -172,7 +172,9 @@ Widget item(BuildContext context, int index, String subject, String url,
         splashColor: Colors.black,
         child: Container(
           child: ListTile(
-            subtitle: Text(subtext),
+            subtitle: Text(
+              subtext,
+            ),
             contentPadding:
                 EdgeInsets.only(top: 8, right: 8, bottom: 8, left: 16),
             trailing: Row(
